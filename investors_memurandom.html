@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>یادداشت سرمایه‌گذار اوژن: بازار هدف، پروفایل مشتری ایده‌آل و استراتژی ورود به بازار</title>
+<style>
+:root {
+  --bg: #ffffff;
+  --surface: #f8fafc;
+  --border: #e2e8f0;
+  --text-main: #0f172a;
+  --text-muted: #475569;
+  --text-dim: #64748b;
+  --primary: #1e3a8a;
+  --accent: #b45309;
+  --success: #166534;
+  --warning: #92400e;
+  --danger: #991b1b;
+  --mono: 'Courier New', monospace;
+  --sans: Verdana, Tahoma, 'Segoe UI', sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+html {
+  font-size: 15px;
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+body {
+  font-family: var(--sans);
+  color: var(--text-main);
+  background: var(--bg);
+  line-height: 1.9;
+  font-weight: 400;
+  max-width: 210mm;
+  margin: 0 auto;
+  padding: 0;
+  direction: rtl;
+  text-align: right;
+}
+
+h1 { font-size: 2.3rem; font-weight: 700; letter-spacing: 0; line-height: 1.4; color: var(--primary); margin-bottom: 1rem; }
+h2 { font-size: 1.6rem; font-weight: 700; color: var(--primary); margin: 2.5rem 0 1rem; border-bottom: 2px solid var(--border); padding-bottom: 0.5rem; }
+h3 { font-size: 1.2rem; font-weight: 700; color: var(--text-main); margin: 1.5rem 0 0.75rem; }
+h4 { font-size: 0.95rem; font-weight: 700; color: var(--text-muted); letter-spacing: 0; margin-bottom: 0.5rem; }
+p { margin-bottom: 1rem; color: var(--text-main); }
+strong { font-weight: 700; color: var(--text-main); }
+code { font-family: var(--mono); background: var(--surface); padding: 0.1em 0.3em; border-radius: 4px; font-size: 0.9em; color: var(--primary); direction: ltr; display: inline-block; }
+
+.page {
+  min-height: 297mm;
+  padding: 40mm 25mm;
+  page-break-after: always;
+  position: relative;
+}
+.page:last-child { page-break-after: auto; }
+
+header.cover {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  height: 297mm;
+  padding: 40mm 25mm;
+  background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+  border-bottom: 8px solid var(--primary);
+}
+
+.cover-meta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  width: 100%;
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.88rem;
+  color: var(--text-muted);
+}
+.cover-meta b { display: block; color: var(--text-main); font-weight: 700; margin-bottom: 0.25rem; font-size: 0.72rem; }
+
+.grid { display: grid; gap: 1.5rem; margin-bottom: 1.5rem; }
+.g-2 { grid-template-columns: 1fr 1fr; }
+.g-3 { grid-template-columns: 1fr 1fr 1fr; }
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 1.25rem;
+}
+.card.highlight { border-right: 4px solid var(--accent); background: #fffbeb; }
+.card.risk { border-right: 4px solid var(--danger); background: #fef2f2; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.85rem;
+}
+th {
+  background: var(--surface);
+  text-align: right;
+  padding: 0.75rem 1rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  border-bottom: 2px solid var(--border);
+}
+td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: top;
+  text-align: right;
+}
+tr:last-child td { border-bottom: none; }
+tbody tr:hover { background: #f1f5f9; }
+
+.badge {
+  display: inline-block;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.15em 0.6em;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+.b-imp { background: #dcfce7; color: var(--success); border: 1px solid #bbf7d0; }
+.b-plan { background: #fef3c7; color: var(--warning); border: 1px solid #fde68a; }
+.b-hyp { background: #e2e8f0; color: var(--text-dim); border: 1px solid #cbd5e1; }
+.b-tier1 { background: var(--primary); color: #fff; }
+.b-tier2 { background: #334155; color: #fff; }
+.b-tier3 { background: #64748b; color: #fff; }
+
+.callout {
+  border-right: 3px solid var(--accent);
+  background: var(--surface);
+  padding: 1rem 1.25rem;
+  margin: 1.5rem 0;
+  font-size: 0.92rem;
+  border-radius: 6px 0 0 6px;
+  line-height: 1.9;
+}
+.callout b { color: var(--primary); }
+.callout.risk { border-right-color: var(--danger); background: #fef2f2; }
+
+footer {
+  margin-top: 4rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.78rem;
+  color: var(--text-dim);
+  text-align: center;
+}
+
+.toc { list-style: none; }
+.toc li { padding: 0.5rem 0; border-bottom: 1px dashed var(--border); display: flex; justify-content: space-between; }
+.toc a { text-decoration: none; color: var(--primary); font-weight: 700; }
+.toc span { color: var(--text-dim); font-family: var(--mono); font-size: 0.85rem; }
+
+.ltr-num { direction: ltr; unicode-bidi: embed; display: inline-block; }
+.ref { font-family: var(--mono); font-size: 0.8em; color: var(--primary); direction: ltr; display: inline-block; }
+
+@media print {
+  body { max-width: none; margin: 0; padding: 0; }
+  .page { padding: 20mm 15mm; min-height: auto; }
+  header.cover { height: auto; min-height: 297mm; }
+  h2 { break-after: avoid; }
+  table { break-inside: avoid; }
+  .card { break-inside: avoid; }
+}
+
+@media screen and (max-width: 800px) {
+  .page { padding: 2rem 1.5rem; min-height: auto; }
+  .g-2, .g-3 { grid-template-columns: 1fr; }
+  header.cover { height: auto; min-height: 100vh; padding: 3rem 1.5rem; }
+}
+</style>
+</head>
+<body>
+
+<header class="cover page">
+  <h4 style="color: var(--accent); margin-bottom: 1rem;">یادداشت سرمایه‌گذار · محرمانه</h4>
+  <h1>بازار هدف، پروفایل مشتری ایده‌آل<br>و استراتژی ورود به بازار</h1>
+  <p style="font-size: 1.05rem; color: var(--text-muted); max-width: 85%; margin-top: 1rem;">
+    تحلیل تجاری مبتنی بر شواهد از بازار قابل دسترسی اوژن، اولویت‌بندی جغرافیایی، جایگاه‌یابی رقابتی و استراتژی درآمد اولیه.
+  </p>
+
+  <div class="cover-meta">
+    <div><b>پروژه</b>اوژن (Oxenn) — با نام قبلی Seorchable</div>
+    <div><b>نوع سند</b>تحلیل بازار و استراتژی GTM</div>
+    <div><b>تاریخ بررسی</b><span class="ltr-num">2026-10-12</span></div>
+    <div><b>شواهد پایه</b>مخزن زنده + داده‌های صنعت</div>
+    <div><b>طبقه‌بندی</b>کاملاً محرمانه</div>
+    <div><b>تهیه‌شده برای</b>سرمایه‌گذاران Seed / Pre-Seed</div>
+  </div>
+</header>
+
+<main>
+
+<section class="page">
+  <h2>۱. فرضیه کلان بازار</h2>
+  <p>اوژن در تقاطع ساختاری <strong>بازار جاافتاده نرم‌افزارهای سئو به ارزش ۸۵٫۹۷ میلیارد دلار</strong> <span class="ref">[[22]]</span> و <strong>بازار نوظهور و به‌سرعت در حال رشد خدمات بهینه‌سازی موتورهای زاینده (GEO) به ارزش ۱٫۲۵ میلیارد دلار</strong> <span class="ref">[[7]]</span> قرار دارد. با جایگزین شدن موتورهای پاسخ‌دهی مبتنی بر هوش مصنوعی (ChatGPT، Perplexity، Gemini) به‌جای جست‌وجوی سنتی در کشف ابتدای قیف، برندهای سازمانی و بازار میانی با یک ریسک فوری و اندازه‌گیری‌نشده روبه‌رو هستند: فرسایش نامرئی برند در پاسخ‌های هوش مصنوعی.</p>
+
+  <p>با این حال، چشم‌انداز فعلی ابزارهای GEO (مانند Profound، Otterly.AI و Peec AI) صرفاً برای بازارها و موجودیت‌های انگلیسی‌زبان غربی بهینه شده است. مزیت رقابتی اولیه اوژن، رقابت مستقیم با بازیگران مسلط جهانی از روز نخست نیست؛ بلکه تسلط بر <strong>بازار کم‌خدمت‌مانده دوزبانه (فارسی/انگلیسی) و منطقه منا در حوزه رویت‌پذیری هوش مصنوعی</strong> است. اوژن با تکیه بر معماری بومی RTL/LTR، پایش پرامپت‌های فارسی و هوش استنادی منطقه‌ای می‌تواند پیش از توسعه به سمت حساب‌های سازمانی جهانی، یک سنگر اولیه کاملاً قابل دفاع را فتح کند.</p>
+
+  <div class="callout">
+    <b>فرضیه اصلی سرمایه‌گذاری:</b> اوژن نباید در ابتدا به دنبال بازار جهانی کسب‌وکارهای کوچک انگلیسی‌زبان برود. سنگر اولیه بهینه، آژانس‌های دیجیتال مستقر در منا و شرکت‌های فناوری دیاسپورای فارسی‌زبان هستند که سبد برندهای دوزبانه را مدیریت می‌کنند. این بخش تمایل بالا به پرداخت، شدت رقابت پایین و درد فوری در ردیابی استنادات هوش مصنوعی در خط‌های نوشتاری غیرلاتین دارد.
+  </div>
+
+  <h2>۲. فهرست مطالب</h2>
+  <ul class="toc">
+    <li><a href="#scope">۳. دامنه محصول و قابلیت‌های راستی‌آزمایی‌شده</a> <span>02</span></li>
+    <li><a href="#icp">۴. پروفایل مشتری ایده‌آل (ICP) و پرسوناهای خریدار</a> <span>03</span></li>
+    <li><a href="#segments">۵. مقایسه رتبه‌بندی‌شده بخش‌های مشتری</a> <span>04</span></li>
+    <li><a href="#geo">۶. اولویت‌بندی بازار جغرافیایی</a> <span>05</span></li>
+    <li><a href="#sizing">۷. تحلیل بازار کل قابل دسترسی (TAM)، بازار قابل خدمت‌دهی (SAM) و بازار قابل کسب (SOM)</a> <span>06</span></li>
+    <li><a href="#competition">۸. چشم‌انداز رقابتی و تمایز</a> <span>07</span></li>
+    <li><a href="#pricing">۹. معماری قیمت‌گذاری و توجیه اقتصادی</a> <span>08</span></li>
+    <li><a href="#gtm">۱۰. نقشه راه سنگر اولیه و توسعه</a> <span>09</span></li>
+    <li><a href="#risks">۱۱. فرض‌های کلیدی، ریسک‌ها و اولویت‌های اعتبارسنجی</a> <span>10</span></li>
+    <li><a href="#evidence">۱۲. رجیستر شواهد</a> <span>11</span></li>
+  </ul>
+</section>
+
+<section class="page" id="scope">
+  <h2>۳. دامنه محصول و قابلیت‌های راستی‌آزمایی‌شده</h2>
+  <p>اندازه‌گیری بازار و استراتژی ورود به بازار باید بر پایه وضعیت پیاده‌سازی واقعی مخزن بنا شود، نه نقشه‌های راه فرضی. ماتریس قابلیت‌های زیر، کد تولیدی راستی‌آزمایی‌شده را از ویژگی‌های برنامه‌ریزی‌شده تفکیک می‌کند.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width: 30%;">حوزه قابلیت</th>
+        <th style="width: 25%;">وضعیت پیاده‌سازی</th>
+        <th>ارتباط تجاری</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>معماری SaaS چندمستأجری</strong><br>ایزوله‌سازی سطح ردیف PostgreSQL (RLS)، جداسازی سخت‌گیرانه فضای کاری، صف وظایف ناهمگام.</td>
+        <td><span class="badge b-imp">پیاده‌سازی و راستی‌آزمایی‌شده</span></td>
+        <td>زیربنای فروش به آژانس‌های B2B و سازمان‌ها؛ تضمین امنیت داده میان مشتریان رقیب یک آژانس.</td>
+      </tr>
+      <tr>
+        <td><strong>موتور دوزبانه RTL/LTR</strong><br>تایپوگرافی بومی فارسی (یکان‌بخ/پیدا) و انگلیسی، تغییر پویای جهت صفحه.</td>
+        <td><span class="badge b-imp">پیاده‌سازی و راستی‌آزمایی‌شده</span></td>
+        <td>خندق رقابتی حیاتی برای بازارهای منا/دیاسپورا؛ رقبا فاقد رابط کاربری بومی RTL و پارسر فارسی برای مدل‌های زبانی هستند.</td>
+      </tr>
+      <tr>
+        <td><strong>رویت‌پذیری هوش مصنوعی و پایش پرامپت</strong><br>ردیابی ذکر برند، استنادات و احساسات (sentiment) در پاسخ‌های مدل‌های زبانی.</td>
+        <td><span class="badge b-imp">هسته پیاده‌سازی‌شده</span> <span class="badge b-plan">در حال مقیاس‌سازی</span></td>
+        <td>پیشران اصلی ارزش در GEO؛ توجیه‌کننده قیمت پرمیوم (۲۰۰ تا ۵۰۰ دلار در ماه).</td>
+      </tr>
+      <tr>
+        <td><strong>سئوی فنی و خزش</strong><br>تحلیل معماری سایت، اعتبارسنجی اسکیما، یکپارچه‌سازی Core Web Vitals.</td>
+        <td><span class="badge b-imp">پیاده‌سازی‌شده</span></td>
+        <td>الزام حداقلی آژانس‌های سئو؛ محرک پذیرش اولیه محصول و ماندگاری مشتری.</td>
+      </tr>
+      <tr>
+        <td><strong>گراف دانش و هوش موجودیت</strong><br>نگاشت روابط معنایی میان برندها، محصولات و استنادات.</td>
+        <td><span class="badge b-plan">برنامه‌ریزی‌شده / نسبی</span></td>
+        <td>فرصت ارتقای فروش با ارزش بالا برای سازمان‌ها؛ اوژن را از ردیاب‌های ساده پرامپت متمایز می‌کند.</td>
+      </tr>
+      <tr>
+        <td><strong>گزارش‌دهی وایت‌لیبل آژانسی</strong><br>تولید خودکار PDF و پورتال مشتری برای گردش کار آژانس‌ها.</td>
+        <td><span class="badge b-hyp">فرضی / نقشه راه</span></td>
+        <td>برای مشتری ایده‌آل آژانسی رده یک ضروری است؛ باید در فاز ۱۱ اجرا اولویت یابد.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <b>مفهوم استراتژیک:</b> اوژن در حال حاضر یک موتور هوش در سطح تولید و یک رابط کاربری دوزبانه منحصربه‌فرد در اختیار دارد، اما فاقد ابزار گردش کار اختصاصی آژانس‌ها (گزارش‌های وایت‌لیبل، مدیریت کاربران مشتری) است که برای بهره‌برداری مالی کامل از بخش آژانسی لازم است. بستن این شکاف، اولویت تجاری فوری است.
+  </div>
+</section>
+
+<section class="page" id="icp">
+  <h2>۴. پروفایل مشتری ایده‌آل (ICP) و پرسوناهای خریدار</h2>
+  <p>بر اساس تقاطع قابلیت‌های راستی‌آزمایی‌شده اوژن (ردیابی دوزبانه هوش مصنوعی، سئوی فنی) و فوریت بازار، پروفایل مشتری ایده‌آل اولیه به شرح زیر تعریف می‌شود:</p>
+
+  <div class="grid g-2">
+    <div class="card highlight">
+      <h3>مشتری ایده‌آل اولیه: آژانس دیجیتال دوزبانه</h3>
+      <p><strong>مشخصات شرکت:</strong> ۱۵ تا ۱۰۰ کارمند؛ درآمد سالانه تکرارشونده (ARR) بین ۲ تا ۱۵ میلیون دلار؛ مستقر در امارات، قطر یا قطب‌های دیاسپورای فارسی‌زبان (لندن، تورنتو، لس‌آنجلس).</p>
+      <p><strong>سبد مشتریان:</strong> مدیریت بیش از ۱۰ برند، شامل سازمان‌های منطقه‌ای منا، تجارت الکترونیک و شرکت‌های فناوری فرامرزی که به رویت‌پذیری هم‌زمان انگلیسی و فارسی/عربی نیاز دارند.</p>
+      <p><strong>رویداد محرک:</strong> یک مشتری بزرگ می‌پرسد: «وقتی کاربران در دسته ما از ChatGPT/Perplexity توصیه می‌خواهند، آیا ما در پاسخ‌های آن ظاهر می‌شویم؟» آژانس هیچ ابزاری برای پاسخ به این پرسش ندارد.</p>
+    </div>
+    <div class="card">
+      <h3>خریدار اقتصادی: بنیان‌گذار آژانس / رئیس بخش دیجیتال</h3>
+      <p><strong>نقطه درد:</strong> از دست دادن قراردادهای رتینر به بوتیک‌های تخصصی بازاریابی هوش مصنوعی؛ ناتوانی در گزارش بازگشت سرمایه رویت‌پذیری AI با ابزارهای سئوی سنتی (Semrush/Ahrefs).</p>
+      <p><strong>اختیار بودجه:</strong> کنترل بودجه ابزار نرم‌افزاری و گزارش‌دهی مشتری. در صورت تضمین یک قرارداد سالانه بیش از ۵۰ هزار دلار، حاضر است ۲۰۰ تا ۵۰۰ دلار در ماه به ازای هر فضای کاری بپردازد.</p>
+      <p><strong>چرخه فروش:</strong> ۱۴ تا ۳۰ روز. به‌شدت وابسته به اثبات مفهوم (اجرای ممیزی رایگان دوزبانه هوش مصنوعی روی دامنه مشتری).</p>
+    </div>
+  </div>
+
+  <h3>پرسونای کاربر نهایی: استراتژیست سئوی فنی / GEO</h3>
+  <p>کاربر روزانه اوژن یک بازاریاب فنی سطح میانی است. این کاربر به داده‌های عمیق تشخیصی (اعتبارسنجی اسکیما، نگاشت منابع استناد، گزارش‌های مهندسی پرامپت) نیاز دارد، نه فقط داشبوردهای مدیریتی. موتور سئوی فنی راستی‌آزمایی‌شده اوژن و ثبت خام پاسخ‌های مدل زبانی، دقیقاً نیاز این کاربر به هوش قابل اقدام را برآورده می‌کند و پس از امضای قرارداد توسط خریدار اقتصادی، ریسک ریزش را کاهش می‌دهد.</p>
+</section>
+
+<section class="page" id="segments">
+  <h2>۵. مقایسه رتبه‌بندی‌شده بخش‌های مشتری</h2>
+  <p>بخش‌ها بر اساس <strong>جذابیت تجاری</strong> (تمایل به پرداخت × دسترس‌پذیری × شدت رقابت) رتبه‌بندی شده‌اند، نه صرفاً بر اساس اندازه کل بازار.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>بخش</th>
+        <th>رده</th>
+        <th>تمایل به پرداخت</th>
+        <th>شدت رقابت</th>
+        <th>جمع‌بندی</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>آژانس‌های دیجیتال منا/دیاسپورا</strong><br>مدیریت برندهای دوزبانه.</td>
+        <td><span class="badge b-tier1">رده ۱</span></td>
+        <td>بالا (۳۰۰ تا ۵۰۰ دلار در ماه)</td>
+        <td>پایین (بدون ابزار بومی دوزبانه GEO)</td>
+        <td><strong>سنگر اولیه.</strong> درد فوری، ارزش قرارداد سالانه بالا، چرخش پایین در صورت یکپارچه‌سازی با گزارش‌دهی مشتری.</td>
+      </tr>
+      <tr>
+        <td><strong>SaaSهای B2B بازار میانی (تیم داخلی)</strong><br>شرکت‌های فناوری با هدف‌گذاری جهانی + منا.</td>
+        <td><span class="badge b-tier1">رده ۱</span></td>
+        <td>بالا (۲۰۰ تا ۴۰۰ دلار در ماه)</td>
+        <td>متوسط (رقابت با HubSpot/Semrush)</td>
+        <td><strong>سنگر اولیه مشترک.</strong> تقاضای قوی برای رویت‌پذیری AI؛ اوژن با عمق فنی و پشتیبانی دوزبانه برنده می‌شود.</td>
+      </tr>
+      <tr>
+        <td><strong>برندهای سازمانی جهانی</strong><br>Fortune 500، املاک وب عظیم.</td>
+        <td><span class="badge b-tier2">رده ۲</span></td>
+        <td>بسیار بالا (بیش از ۱۰۰۰ دلار در ماه)</td>
+        <td>شدید (Profound، Otterly، ابزارهای داخلی سفارشی)</td>
+        <td><strong>هدف توسعه.</strong> نیازمند SOC2، SSO و پشتیبانی اختصاصی. تنها پس از تسلط بر رده ۱ پیگیری شود.</td>
+      </tr>
+      <tr>
+        <td><strong>SMEها و کسب‌وکارهای محلی داخل ایران</strong><br>تجارت الکترونیک محلی، خدمات.</td>
+        <td><span class="badge b-tier3">رده ۳</span></td>
+        <td>پایین (۲۰ تا ۵۰ دلار در ماه)</td>
+        <td>بالا (ابزارهای محلی ارزان، کار دستی)</td>
+        <td><strong>اجتناب شود.</strong> هزینه جذب بالا، موانع شدید زیرساخت پرداخت، فوریت پایین جست‌وجوی هوش مصنوعی.</td>
+      </tr>
+      <tr>
+        <td><strong>SMBهای غربی (فقط انگلیسی)</strong><br>کسب‌وکارهای محلی، وبلاگ‌های پایه.</td>
+        <td><span class="badge b-tier3">رده ۳</span></td>
+        <td>پایین (۲۹ دلار در ماه)</td>
+        <td>شدید (Otterly، Semrush، ابزارهای رایگان AI)</td>
+        <td><strong>به تعویق بیفتد.</strong> رقابت قیمتی تا کف؛ عمق فنی اوژن در این بخش بیش از حد نیاز و غیرسودآور است.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="page" id="geo">
+  <h2>۶. اولویت‌بندی بازار جغرافیایی</h2>
+  <p>استراتژی جغرافیایی باید <em>جذابیت بازار</em> را از <em>دسترس‌پذیری عملیاتی</em> تفکیک کند. معماری دوزبانه اوژن یک فرصت آربیتراژ جغرافیایی منحصربه‌فرد ایجاد می‌کند.</p>
+
+  <div class="grid g-2">
+    <div class="card">
+      <h3>اولویت ۱: منا (امارات، قطر، عربستان) و دیاسپورا</h3>
+      <p><strong>مبنا:</strong> بازار تبلیغات و آژانس‌های خاورمیانه ۸٫۱۸ میلیارد دلار ارزش دارد و به‌سرعت رشد می‌کند <span class="ref">[[30]]</span>. هزینه تبلیغات دیجیتال در منا با حرکت به سمت استراتژی‌های محتوای شخصی‌سازی‌شده در حال جهش است <span class="ref">[[35]]</span>. آژانس‌های این منطقه سبدهای دوزبانه (عربی/فارسی/انگلیسی) با ارزش بالا را مدیریت می‌کنند و به ریل‌های پرداخت بین‌المللی (Stripe، Wise) دسترسی دارند.</p>
+      <p><strong>مزیت اوژن:</strong> پیشگام در ردیابی استنادات هوش مصنوعی بومی RTL. ابزارهای غربی در تجزیه موجودیت‌های معنایی فارسی/عربی و ساختار پرامپت‌های راست‌به‌چپ ناتوان‌اند.</p>
+    </div>
+    <div class="card">
+      <h3>اولویت ۲: ایران (داخلی)</h3>
+      <p><strong>مبنا:</strong> حجم بالای استعداد فنی و کسب‌وکارهای دیجیتال داخلی. با این حال، بازار تبلیغات ایران کندتر از منطقه منا رشد می‌کند <span class="ref">[[32]]</span>.</p>
+      <p><strong>محدودیت:</strong> تحریم‌های شدید بین‌المللی و انزوای پرداخت‌های فرامرزی، درآمدزایی SaaS را برای استارتاپی که به زیرساخت ابری جهانی (Vercel، AWS، Stripe) متکی است، از نظر عملیاتی پرخطر می‌کند. <strong>توصیه:</strong> از ایران صرفاً به‌عنوان قطب استعداد فنی و تحقیق‌وتوسعه استفاده شود، نه بازار اصلی درآمد.</p>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top: 1.5rem;">
+    <h3>اولویت ۳: بازارهای جهانی انگلیسی‌زبان (آمریکا، انگلستان، اروپا)</h3>
+    <p><strong>مبنا:</strong> بازار کل قابل دسترسی عظیم (بیش از ۸۵ میلیارد دلار نرم‌افزار سئو <span class="ref">[[22]]</span>)، اما شدت رقابت بی‌رحمانه. استارتاپ‌های GEO مانند Profound و Otterly سرمایه کلان جذب کرده و در بازار مستقر شده‌اند.</p>
+    <p><strong>استراتژی:</strong> بازاریابی گسترده در این منطقه انجام نشود. ورود فقط از طریق حساب‌های «اسب تروآ»: بنیان‌گذاران دیاسپورا که برندهای جهانی را مدیریت می‌کنند، اوژن را از طریق قابلیت‌های فارسی کشف کرده و سپس به دلیل موتور تشخیص فنی برتر، آن را برای املاک انگلیسی‌زبان خود نیز می‌پذیرند.</p>
+  </div>
+</section>
+
+<section class="page" id="sizing">
+  <h2>۷. تحلیل بازار کل قابل دسترسی (TAM)، بازار قابل خدمت‌دهی (SAM) و بازار قابل کسب (SOM)</h2>
+  <p>اندازه‌گیری بازار متکی بر گزارش‌های صنعتی راستی‌آزمایی‌شده و اقتصاد آژانس‌ها به روش پایین‌به‌بالا است و از خلط کردن کل هزینه تبلیغات دیجیتال با TAM نرم‌افزار پرهیز می‌کند.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>شاخص</th>
+        <th>برآورد (۲۰۲۶)</th>
+        <th>روش‌شناسی و منابع</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>TAM</strong><br>(بازار کل قابل دسترسی)</td>
+        <td><strong>۸۷٫۲۲ میلیارد دلار</strong></td>
+        <td>بازار جهانی نرم‌افزار سئو (۸۵٫۹۷ میلیارد دلار) <span class="ref">[[22]]</span> + بازار جهانی خدمات GEO (۱٫۲۵ میلیارد دلار) <span class="ref">[[7]]</span>. نمایانگر کل هزینه نظری روی ابزارها و خدمات بهینه‌سازی رویت‌پذیری جست‌وجو/AI در سطح جهان.</td>
+      </tr>
+      <tr>
+        <td><strong>SAM</strong><br>(بازار قابل خدمت‌دهی)</td>
+        <td><strong>۱۲٫۴۸ میلیارد دلار</strong></td>
+        <td>بازار بازاریابی/آژانس منا (۸٫۱۸ میلیارد دلار) <span class="ref">[[30]]</span> + تقاضای جهانی نرم‌افزار سئوی دوزبانه/چندزبانه (برآورد ۵٪ از TAM جهانی = ۴٫۳ میلیارد دلار). نمایانگر بازاری که اوژن با توجه به پشتیبانی زبانی و تمرکز منطقه‌ای فعلی واقعاً می‌تواند به آن خدمت دهد.</td>
+      </tr>
+      <tr>
+        <td><strong>SOM</strong><br>(بازار قابل کسب)</td>
+        <td><strong>۶٫۰ میلیون دلار ARR</strong><br>(هدف ۳ ساله)</td>
+        <td><strong>محاسبه پایین‌به‌بالا:</strong> کسب ۱۵۰۰ فضای کاری آژانسی بازار میانی طی ۳۶ ماه. میانگین ارزش قرارداد سالانه (ACV) برابر ۴۰۰۰ دلار (معادل تقریباً ۳۳۳ دلار در ماه به ازای هر فضای کاری با مدیریت ۵ تا ۱۰ دامنه مشتری). فرض: نفوذ ۵٪ در بخش آژانس‌های قابل دسترسی منا/دیاسپورا.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>تحلیل حساسیت: سناریوهای SOM (سال سوم)</h3>
+  <div class="grid g-3">
+    <div class="card"><h4>محافظه‌کارانه</h4><p><strong>۲٫۴ میلیون دلار ARR</strong><br>۶۰۰ فضای کاری × ACV ۴۰۰۰ دلار. چرخش بالا به دلیل نبود قابلیت‌های وایت‌لیبل؛ چرخه‌های فروش کند در منا.</p></div>
+    <div class="card highlight"><h4>سناریوی پایه</h4><p><strong>۶٫۰ میلیون دلار ARR</strong><br>۱۵۰۰ فضای کاری × ACV ۴۰۰۰ دلار. تناسب قوی محصول-بازار در ردیابی دوزبانه؛ استقرار موفق آژانس‌ها.</p></div>
+    <div class="card"><h4>خوش‌بینانه</h4><p><strong>۱۲٫۵ میلیون دلار ARR</strong><br>۲۵۰۰ فضای کاری × ACV ۵۰۰۰ دلار. توسعه به حساب‌های سازمانی جهانی از طریق استراتژی اسب تروآی دیاسپورا.</p></div>
+  </div>
+</section>
+
+<section class="page" id="competition">
+  <h2>۸. چشم‌انداز رقابتی و تمایز</h2>
+  <p>بازار GEO/رویت‌پذیری AI نوظهور اما به‌سرعت در حال تحکیم است. اوژن باید از جنگ مستقیم قابلیت‌به‌قابلیت با شرکت‌های غربیِ پُرسرمایه بپرهیزد و به‌جای آن نقاط کور ساختاری آن‌ها را هدف گیرد.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>رقیب</th>
+        <th>بخش هدف</th>
+        <th>قیمت‌گذاری (راستی‌آزمایی‌شده)</th>
+        <th>ضعف کلیدی / شکاف ورود اوژن</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Profound</strong></td>
+        <td>سازمانی جهانی</td>
+        <td>۴۹۹ دلار در ماه <span class="ref">[[11]]</span></td>
+        <td><strong>فقط انگلیسی، هزینه بالا.</strong> اوژن آژانس‌های بازار میانی را می‌بَرَد که نمی‌توانند سالانه ۶ هزار دلار به ازای هر مشتری صرفاً برای ردیابی انگلیسی بپردازند.</td>
+      </tr>
+      <tr>
+        <td><strong>Otterly.AI</strong></td>
+        <td>SMB / تک‌نفره</td>
+        <td>۲۹ دلار در ماه <span class="ref">[[14]]</span></td>
+        <td><strong>تشخیص سطحی.</strong> موتور سئوی فنی و نگاشت منابع استناد اوژن عمقی ارائه می‌دهد که Otterly فاقد آن است و توجیه‌کننده قیمت ۱۰ برابری برای آژانس‌هاست.</td>
+      </tr>
+      <tr>
+        <td><strong>Peec AI</strong></td>
+        <td>تیم‌های بازاریابی میانی</td>
+        <td>سفارشی / رده میانی <span class="ref">[[11]]</span></td>
+        <td><strong>بدون پشتیبانی RTL.</strong> در ساختار پرامپت‌های فارسی/عربی و تجزیه استنادات کاملاً ناتوان است. اوژن این شکاف را به‌طور کامل در اختیار دارد.</td>
+      </tr>
+      <tr>
+        <td><strong>Semrush / Ahrefs</strong></td>
+        <td>سئوی سنتی</td>
+        <td>۱۲۹ تا ۴۴۹ دلار در ماه</td>
+        <td><strong>تمرکز بر سئوی قدیمی.</strong> رویت‌پذیری AI صرفاً یک افزونه جانبی است. اوژن بومیِ موتورهای پاسخ‌دهی LLM است، نه صرفاً لینک‌های آبی.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <b>استراتژی رقابتی:</b> اوژن را به‌عنوان «قاتل Semrush» بازاریابی نکنید. آن را «مرکز فرمان رویت‌پذیری هوش مصنوعی» معرفی کنید که در کنار ابزارهای سنتی سئو قرار می‌گیرد. آژانس‌ها از Semrush برای بک‌لینک و از اوژن برای استنادات AI و پایش پرامپت استفاده خواهند کرد. این جایگاه‌یابی مکمل، اصطکاک فروش را کاهش داده و از نبرد مستقیم جابه‌جایی ابزار پرهیز می‌کند.
+  </div>
+</section>
+
+<section class="page" id="pricing">
+  <h2>۹. معماری قیمت‌گذاری و توجیه اقتصادی</h2>
+  <p>قیمت‌گذاری باید با اقتصاد واحد مشتری ایده‌آل آژانسی هم‌راستا باشد. آژانس‌ها ارزش نرم‌افزار را به مشتری خود بازفروش می‌کنند؛ بنابراین قیمت اوژن باید از حاشیه ۳ تا ۵ برابری هنگام بسته‌بندی در قراردادهای رتینر آژانسی پشتیبانی کند.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>رده پلن</th>
+        <th>خریدار هدف</th>
+        <th>نقطه قیمتی</th>
+        <th>امتیازات و محدودیت‌های اصلی</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>استارتر</strong></td>
+        <td>فریلنسرها / SMB داخلی</td>
+        <td>۷۹ دلار در ماه</td>
+        <td>۱ فضای کاری، ۳ دامنه، رویت‌پذیری AI پایه، پایش هفتگی پرامپت، ممیزی‌های استاندارد سئو.</td>
+      </tr>
+      <tr>
+        <td><strong>آژانسی</strong> <span class="badge b-tier1">هسته</span></td>
+        <td>آژانس‌های بوتیک (ICP رده ۱)</td>
+        <td>۲۹۹ دلار در ماه</td>
+        <td>۵ فضای کاری، ۲۵ دامنه، پایش روزانه پرامپت AI، گراف کامل استنادات، گزارش‌های دوزبانه RTL/LTR، دسترسی API.</td>
+      </tr>
+      <tr>
+        <td><strong>مقیاس</strong></td>
+        <td>SaaS بازار میانی / آژانس‌های بزرگ</td>
+        <td>۶۹۹ دلار در ماه</td>
+        <td>فضای کاری نامحدود، پورتال مشتری وایت‌لیبل، مرورگر گراف دانش، گره‌های خزش اختصاصی، مسیریابی اولویت‌دار LLM.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3>مفاهیم تجاری و اقتصاد واحد</h3>
+  <div class="grid g-2">
+    <div class="card">
+      <h4>پروفایل حاشیه ناخالص</h4>
+      <p>هزینه استنتاج AI/LLM (مانند Google AI SDK و Firecrawl) اصلی‌ترین بهای تمام‌شده خدمات (COGS) است. با حسابداری دقیق توکن و کش پرامپت (پیاده‌سازی‌شده در لایه کنترل هزینه اوژن)، حاشیه ناخالص هدف در رده آژانسی <strong>۷۵ تا ۸۲٪</strong> است. رده‌های پایین‌تر به دلیل هزینه LLM دچار فشردگی حاشیه می‌شوند؛ بنابراین ارتقای فروش تهاجمی به رده آژانسی الزامی است.</p>
+    </div>
+    <div class="card">
+      <h4>هزینه جذب مشتری (CAC)</h4>
+      <p>CAC هدف برای آژانس‌های منا/دیاسپورا: <strong>۸۰۰ تا ۱۲۰۰ دلار</strong>. از طریق رشد محصول‌محور (ابزار رایگان ممیزی دوزبانه AI) و ارتباط هدفمند لینکدین با بنیان‌گذاران آژانس. هدف دوره بازگشت سرمایه: کمتر از ۶ ماه با پلن ۲۹۹ دلار در ماه.</p>
+    </div>
+  </div>
+</section>
+
+<section class="page" id="gtm">
+  <h2>۱۰. نقشه راه سنگر اولیه و توسعه</h2>
+  <p>استراتژی ورود به بازار یک توالی دقیق را دنبال می‌کند: ایجاد تسلط در گوشه دوزبانه، ساخت جریان نقدی و مطالعات موردی، سپس توسعه افقی به سمت حساب‌های سازمانی بزرگ‌تر.</p>
+
+  <h3>فاز ۱: شکاف دوزبانه (ماه ۱ تا ۹)</h3>
+  <ul style="padding-right: 1.5rem; margin-bottom: 1.5rem;">
+    <li style="margin-bottom: 0.5rem;"><strong>اقدام:</strong> راه‌اندازی ابزار عمومی و رایگان «بررسی رویت‌پذیری AI فارسی/انگلیسی».</li>
+    <li style="margin-bottom: 0.5rem;"><strong>هدف:</strong> آژانس‌های دیجیتال منا و برندهای تجارت الکترونیک دیاسپورای فارسی‌زبان.</li>
+    <li style="margin-bottom: 0.5rem;"><strong>تبدیل:</strong> ابزار رایگان ۳ شکاف بحرانی در استنادات AI را شناسایی می‌کند. بازکردن گراف کامل استنادات و پایش تاریخی نیازمند پلن آژانسی ۲۹۹ دلار در ماه است.</li>
+    <li><strong>نقطه عطف:</strong> ۱۰۰ فضای کاری آژانسی پرداخت‌کننده (MRR ۳۰ هزار دلار).</li>
+  </ul>
+
+  <h3>فاز ۲: اکوسیستم آژانسی (ماه ۱۰ تا ۱۸)</h3>
+  <ul style="padding-right: 1.5rem; margin-bottom: 1.5rem;">
+    <li style="margin-bottom: 0.5rem;"><strong>اقدام:</strong> ارائه گزارش‌دهی وایت‌لیبل مشتری و مجوزهای تیمی چندکاربره.</li>
+    <li style="margin-bottom: 0.5rem;"><strong>هدف:</strong> آژانس‌های موجود در حال گسترش سبد مشتریان.</li>
+    <li style="margin-bottom: 0.5rem;"><strong>توسعه:</strong> معرفی افزودنی «صندلی مشتری» (۴۹ دلار در ماه به ازای هر مشتری) برای کسب درآمد توسعه مبتنی بر مصرف، بدون ریزش فضای کاری هسته.</li>
+    <li><strong>نقطه عطف:</strong> ۵۰۰ فضای کاری پرداخت‌کننده (MRR ۱۵۰ هزار دلار).</li>
+  </ul>
+
+  <h3>فاز ۳: اسب تروآی سازمانی (ماه ۱۹ تا ۳۶)</h3>
+  <ul style="padding-right: 1.5rem; margin-bottom: 1.5rem;">
+    <li style="margin-bottom: 0.5rem;"><strong>اقدام:</strong> اهرم‌سازی از بنیان‌گذاران دیاسپورا که از اوژن برای املاک فارسی خود استفاده می‌کنند تا پلتفرم را برای ردیابی AI انگلیسی‌زبان به دفتر مرکزی جهانی خود معرفی کنند.</li>
+    <li style="margin-bottom: 0.5rem;"><strong>هدف:</strong> برندهای سازمانی جهانی (رده ۲).</li>
+    <li><strong>نقطه عطف:</strong> ۲۰ قرارداد سازمانی با ACV بیش از ۱۵۰۰ دلار در ماه.</li>
+  </ul>
+
+  <div class="callout risk">
+    <b>بخش‌هایی که عمداً به تعویق می‌افتند:</b> در ۲۴ ماه نخست به دنبال SMEهای داخلی ایران یا کسب‌وکارهای محلی غربی نروید. هزینه جذب مشتری بسیار بالا، تمایل به پرداخت نزدیک به صفر برای رویت‌پذیری AI و هزینه‌های پشتیبانی، منابع مهندسی را خواهد بلعید.
+  </div>
+</section>
+
+<section class="page" id="risks">
+  <h2>۱۱. فرض‌های کلیدی، ریسک‌ها و اولویت‌های اعتبارسنجی</h2>
+  <p>این استراتژی ورود به بازار بر رفتارهای خاص بازار و واقعیت‌های عملیاتی تکیه دارد. ریسک‌های زیر می‌توانند فرضیه را باطل کنند و نیازمند تغییر مسیر فوری هستند.</p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>دسته ریسک</th>
+        <th>ریسک مشخص</th>
+        <th>کاهش ریسک / اولویت اعتبارسنجی</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>ژئوپلیتیک / تحریم</strong></td>
+        <td>ناتوانی قانونی یا عملیاتی در پردازش پرداخت از موجودیت‌های منا/مرتبط با ایران به دلیل تغییر قوانین انطباق.</td>
+        <td><strong>اولویت ۱:</strong> تأسیس فوری شخصیت حقوقی و حساب Stripe Atlas در امارات یا انگلستان. اعتبارسنجی ریل‌های پرداخت با ۵ آژانس بتا، پیش از مقیاس‌سازی هزینه بازاریابی.</td>
+      </tr>
+      <tr>
+        <td><strong>فشردگی حاشیه LLM</strong></td>
+        <td>افزایش قیمت API توسط Google/OpenAI و نابودی فرض حاشیه ناخالص ۷۵٪ در رده ۲۹۹ دلار.</td>
+        <td><strong>اولویت ۲:</strong> پیاده‌سازی اندازه‌گیری دقیق مصرف و سقف سخت کوئری‌های LLM در هر فضای کاری. ساخت لایه‌های کش اختصاصی برای کاهش فراخوانی‌های تکراری API.</td>
+      </tr>
+      <tr>
+        <td><strong>ریسک پلتفرم</strong></td>
+        <td>مسدودسازی خزش خودکار توسط ChatGPT/Perplexity و اختلال در قابلیت هسته ردیابی استنادات.</td>
+        <td><strong>اولویت ۳:</strong> متنوع‌سازی منابع داده (APIهای رسمی در صورت وجود، خزش SERP، ارائه‌دهندگان داده شخص ثالث). عدم اتکا به یک ارائه‌دهنده LLM.</td>
+      </tr>
+      <tr>
+        <td><strong>آموزش بازار</strong></td>
+        <td>آژانس‌ها هنوز «GEO» یا «رویت‌پذیری AI» را درک نمی‌کنند و از تخصیص بودجه برای آن خودداری می‌کنند.</td>
+        <td><strong>اولویت ۴:</strong> تغییر پیام از «GEO» به «محافظت از برند در جست‌وجوی هوش مصنوعی». قاب‌بندی مسئله به‌عنوان کاهش ریسک (از دست دادن سهم بازار به نفع AI)، نه یک کانال بازاریابی جدید.</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+<section class="page" id="evidence">
+  <h2>۱۲. رجیستر شواهد</h2>
+  <p>تمام ادعاهای مادی بازار و رقابت در این یادداشت با منابع راستی‌آزمایی‌شده زیر پشتیبانی می‌شود. داده‌ها در اکتبر ۲۰۲۶ دسترسی و بررسی شده‌اند.</p>
+
+  <table style="font-size: 0.8rem;">
+    <thead>
+      <tr>
+        <th style="width: 8%;">مرجع</th>
+        <th style="width: 32%;">منبع و انتشار</th>
+        <th style="width: 60%;">ادعای پشتیبانی‌شده</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><span class="ref">[[1]]</span></td><td><span class="ltr-num">Dimension Market Research (2026)</span></td><td>پیش‌بینی رشد بازار GEO به ۱۰۸۹٫۳ میلیون دلار در سال ۲۰۲۶.</td></tr>
+      <tr><td><span class="ref">[[7]]</span></td><td><span class="ltr-num">Coherent Market Insights (Aug 2026)</span></td><td>انتظار رشد بازار جهانی خدمات GEO از ۱٫۲۵ میلیارد دلار در سال ۲۰۲۶.</td></tr>
+      <tr><td><span class="ref">[[11]]</span></td><td><span class="ltr-num">Discovered Labs (Dec 2025)</span></td><td>راستی‌آزمایی قیمت Profound: ۴۹۹ دلار در ماه برای عمق سازمانی رویت‌پذیری AI.</td></tr>
+      <tr><td><span class="ref">[[14]]</span></td><td><span class="ltr-num">Surmado (May 2026)</span></td><td>قیمت Otterly.AI از ۲۹ دلار در ماه؛ کمترین نقطه ورود معتبر بازار.</td></tr>
+      <tr><td><span class="ref">[[22]]</span></td><td><span class="ltr-num">Fortune Business Insights (2026)</span></td><td>ارزش بازار جهانی نرم‌افزار سئو: ۸۵٫۹۷ میلیارد دلار در سال ۲۰۲۵.</td></tr>
+      <tr><td><span class="ref">[[30]]</span></td><td><span class="ltr-num">Mordor Intelligence (Mar 2026)</span></td><td>ارزش بازار آژانس‌های بازاریابی و تبلیغات خاورمیانه: ۸٫۱۸ میلیارد دلار در سال ۲۰۲۵.</td></tr>
+      <tr><td><span class="ref">[[32]]</span></td><td><span class="ltr-num">NT Technology (Blog)</span></td><td>ویژگی‌های بازار تبلیغات ایران و رشد کندتر آن نسبت به منطقه منا.</td></tr>
+      <tr><td><span class="ref">[[35]]</span></td><td><span class="ltr-num">Statista Market Forecast</span></td><td>جهش هزینه تبلیغات دیجیتال در منا با حرکت به سمت محتوای شخصی‌سازی‌شده.</td></tr>
+      <tr><td>مخزن</td><td><span class="ltr-num">Oxenn GitHub (main @ d0f955d)</span></td><td>راستی‌آزمایی وضعیت پیاده‌سازی معماری چندمستأجری، موتور RTL/LTR و سرویس‌های ردیابی AI.</td></tr>
+    </tbody>
+  </table>
+
+  <footer>
+    <p>یادداشت سرمایه‌گذار اوژن · بازار هدف و استراتژی ورود به بازار · محرمانه · اکتبر ۲۰۲۶</p>
+    <p style="margin-top: 0.5rem; font-size: 0.72rem;">این سند شامل اظهارات آینده‌نگر و برآوردهای مدل‌سازی‌شده است. نتایج واقعی نفوذ در بازار و درآمد ممکن است بسته به کیفیت اجرا، پویایی‌های رقابتی و عوامل اقتصاد کلان به‌طور معناداری متفاوت باشد.</p>
+  </footer>
+</section>
+
+</main>
+
+</body>
+</html>
