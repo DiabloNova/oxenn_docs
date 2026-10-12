@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>یادداشت سرمایه‌گذار اوژن: بازار هدف، پروفایل مشتری ایده‌آل و استراتژی ورود به بازار</title>
+<title>یادداشت سرمایه‌گذار اوژن — بازار هدف ایران، اندازه بازار و استراتژی ورود</title>
 <style>
 :root {
   --bg: #ffffff;
@@ -13,604 +13,697 @@
   --text-muted: #475569;
   --text-dim: #64748b;
   --primary: #1e3a8a;
+  --primary-2: #2d4ea8;
   --accent: #b45309;
   --success: #166534;
   --warning: #92400e;
   --danger: #991b1b;
-  --mono: 'Courier New', monospace;
   --sans: Verdana, Tahoma, 'Segoe UI', sans-serif;
+  --mono: 'Courier New', monospace;
 }
-
 * { box-sizing: border-box; margin: 0; padding: 0; }
-
-html {
-  font-size: 15px;
-  -webkit-print-color-adjust: exact;
-  print-color-adjust: exact;
-}
-
+html { font-size: 15px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
 body {
   font-family: var(--sans);
   color: var(--text-main);
   background: var(--bg);
-  line-height: 1.9;
-  font-weight: 400;
+  line-height: 2;
   max-width: 210mm;
   margin: 0 auto;
-  padding: 0;
   direction: rtl;
   text-align: right;
 }
+h1 { font-size: 2.1rem; font-weight: 700; line-height: 1.5; color: var(--primary); margin-bottom: 1rem; }
+h2 { font-size: 1.45rem; font-weight: 700; color: var(--primary); margin: 2.2rem 0 1rem; border-bottom: 2px solid var(--border); padding-bottom: 0.5rem; }
+h3 { font-size: 1.1rem; font-weight: 700; color: var(--text-main); margin: 1.4rem 0 0.7rem; }
+h4 { font-size: 0.9rem; font-weight: 700; color: var(--text-muted); margin-bottom: 0.5rem; }
+p { margin-bottom: 1rem; }
+p.muted, li.muted { color: var(--text-muted); font-size: 0.92rem; }
+strong { font-weight: 700; }
+ul { padding-right: 1.4rem; margin-bottom: 1rem; }
+li { margin-bottom: 0.45rem; }
+.ref { font-family: var(--mono); font-size: 0.72em; color: var(--primary); direction: ltr; display: inline-block; vertical-align: super; }
+.num { direction: ltr; unicode-bidi: embed; display: inline-block; font-family: var(--mono); }
 
-h1 { font-size: 2.3rem; font-weight: 700; letter-spacing: 0; line-height: 1.4; color: var(--primary); margin-bottom: 1rem; }
-h2 { font-size: 1.6rem; font-weight: 700; color: var(--primary); margin: 2.5rem 0 1rem; border-bottom: 2px solid var(--border); padding-bottom: 0.5rem; }
-h3 { font-size: 1.2rem; font-weight: 700; color: var(--text-main); margin: 1.5rem 0 0.75rem; }
-h4 { font-size: 0.95rem; font-weight: 700; color: var(--text-muted); letter-spacing: 0; margin-bottom: 0.5rem; }
-p { margin-bottom: 1rem; color: var(--text-main); }
-strong { font-weight: 700; color: var(--text-main); }
-code { font-family: var(--mono); background: var(--surface); padding: 0.1em 0.3em; border-radius: 4px; font-size: 0.9em; color: var(--primary); direction: ltr; display: inline-block; }
-
-.page {
-  min-height: 297mm;
-  padding: 40mm 25mm;
-  page-break-after: always;
-  position: relative;
-}
+.page { min-height: 297mm; padding: 32mm 22mm; page-break-after: always; position: relative; }
 .page:last-child { page-break-after: auto; }
 
 header.cover {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-end;
-  height: 297mm;
-  padding: 40mm 25mm;
+  display: flex; flex-direction: column; justify-content: center; align-items: flex-end;
+  height: 297mm; padding: 36mm 22mm;
   background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
   border-bottom: 8px solid var(--primary);
 }
-
 .cover-meta {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  width: 100%;
-  margin-top: 4rem;
-  padding-top: 2rem;
-  border-top: 1px solid var(--border);
-  font-size: 0.88rem;
-  color: var(--text-muted);
+  display: grid; grid-template-columns: 1fr 1fr; gap: 1.6rem; width: 100%;
+  margin-top: 3.5rem; padding-top: 1.6rem; border-top: 1px solid var(--border);
+  font-size: 0.85rem; color: var(--text-muted);
 }
-.cover-meta b { display: block; color: var(--text-main); font-weight: 700; margin-bottom: 0.25rem; font-size: 0.72rem; }
+.cover-meta b { display: block; color: var(--text-main); font-weight: 700; margin-bottom: 0.2rem; font-size: 0.72rem; }
 
-.grid { display: grid; gap: 1.5rem; margin-bottom: 1.5rem; }
+.grid { display: grid; gap: 1.1rem; margin-bottom: 1.2rem; }
 .g-2 { grid-template-columns: 1fr 1fr; }
 .g-3 { grid-template-columns: 1fr 1fr 1fr; }
+.g-4 { grid-template-columns: repeat(4, 1fr); }
 
-.card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  padding: 1.25rem;
-}
+.card { background: var(--surface); border: 1px solid var(--border); border-radius: 8px; padding: 1.1rem 1.2rem; }
 .card.highlight { border-right: 4px solid var(--accent); background: #fffbeb; }
 .card.risk { border-right: 4px solid var(--danger); background: #fef2f2; }
+.card.navy { border-right: 4px solid var(--primary); }
 
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin: 1.5rem 0;
-  font-size: 0.85rem;
-}
-th {
-  background: var(--surface);
-  text-align: right;
-  padding: 0.75rem 1rem;
-  font-weight: 700;
-  color: var(--text-muted);
-  font-size: 0.72rem;
-  border-bottom: 2px solid var(--border);
-}
-td {
-  padding: 0.75rem 1rem;
-  border-bottom: 1px solid var(--border);
-  vertical-align: top;
-  text-align: right;
-}
+.stat { text-align: center; padding: 1rem 0.6rem; }
+.stat .v { font-size: 1.35rem; font-weight: 700; color: var(--primary); line-height: 1.6; direction: rtl; }
+.stat .v small { font-size: 0.72rem; color: var(--accent); font-weight: 700; }
+.stat .k { font-size: 0.72rem; color: var(--text-muted); line-height: 1.7; margin-top: 0.3rem; }
+
+table { width: 100%; border-collapse: collapse; margin: 1.2rem 0; font-size: 0.82rem; }
+th { background: var(--surface); text-align: right; padding: 0.65rem 0.8rem; font-weight: 700; color: var(--text-muted); font-size: 0.72rem; border-bottom: 2px solid var(--border); }
+td { padding: 0.65rem 0.8rem; border-bottom: 1px solid var(--border); vertical-align: top; }
 tr:last-child td { border-bottom: none; }
 tbody tr:hover { background: #f1f5f9; }
+td .num, th .num { font-size: 0.95em; }
 
-.badge {
-  display: inline-block;
-  font-size: 0.68rem;
-  font-weight: 700;
-  padding: 0.15em 0.6em;
-  border-radius: 4px;
-  white-space: nowrap;
-}
-.b-imp { background: #dcfce7; color: var(--success); border: 1px solid #bbf7d0; }
-.b-plan { background: #fef3c7; color: var(--warning); border: 1px solid #fde68a; }
-.b-hyp { background: #e2e8f0; color: var(--text-dim); border: 1px solid #cbd5e1; }
+.badge { display: inline-block; font-size: 0.66rem; font-weight: 700; padding: 0.1em 0.6em; border-radius: 4px; white-space: nowrap; }
+.b-high { background: #dcfce7; color: var(--success); border: 1px solid #bbf7d0; }
+.b-mid { background: #fef3c7; color: var(--warning); border: 1px solid #fde68a; }
+.b-low { background: #fee2e2; color: var(--danger); border: 1px solid #fecaca; }
+.b-modeled { background: #e0e7ff; color: #3730a3; border: 1px solid #c7d2fe; }
+.b-measured { background: #dcfce7; color: var(--success); border: 1px solid #bbf7d0; }
 .b-tier1 { background: var(--primary); color: #fff; }
 .b-tier2 { background: #334155; color: #fff; }
-.b-tier3 { background: #64748b; color: #fff; }
+.b-tier3 { background: #94a3b8; color: #fff; }
+.b-prop { background: #fff7ed; color: var(--accent); border: 1px solid #fed7aa; }
+.b-pub { background: #eff6ff; color: var(--primary); border: 1px solid #bfdbfe; }
 
-.callout {
-  border-right: 3px solid var(--accent);
-  background: var(--surface);
-  padding: 1rem 1.25rem;
-  margin: 1.5rem 0;
-  font-size: 0.92rem;
-  border-radius: 6px 0 0 6px;
-  line-height: 1.9;
-}
+.callout { border-right: 3px solid var(--accent); background: var(--surface); padding: 0.9rem 1.2rem; margin: 1.2rem 0; font-size: 0.9rem; border-radius: 6px 0 0 6px; line-height: 2; }
 .callout b { color: var(--primary); }
 .callout.risk { border-right-color: var(--danger); background: #fef2f2; }
+.callout.navy { border-right-color: var(--primary); background: #eff6ff; }
 
-footer {
-  margin-top: 4rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid var(--border);
-  font-size: 0.78rem;
-  color: var(--text-dim);
-  text-align: center;
-}
+.flow { display: flex; flex-direction: row-reverse; align-items: stretch; gap: 0; margin: 1.2rem 0; flex-wrap: wrap; }
+.flow .step { flex: 1; min-width: 120px; background: var(--surface); border: 1px solid var(--border2, #cbd5e1); border: 1px solid #cbd5e1; border-radius: 8px; padding: 0.7rem 0.6rem; text-align: center; font-size: 0.74rem; color: var(--text-main); line-height: 1.8; position: relative; }
+.flow .step b { display: block; color: var(--primary); font-size: 0.78rem; }
+.flow .arr { display: flex; align-items: center; padding: 0 0.35rem; color: var(--accent); font-size: 1.1rem; font-weight: 700; }
 
-.toc { list-style: none; }
-.toc li { padding: 0.5rem 0; border-bottom: 1px dashed var(--border); display: flex; justify-content: space-between; }
-.toc a { text-decoration: none; color: var(--primary); font-weight: 700; }
-.toc span { color: var(--text-dim); font-family: var(--mono); font-size: 0.85rem; }
+.chartbox { background: var(--bg); border: 1px solid var(--border); border-radius: 10px; padding: 0.8rem; margin: 1.2rem 0; }
+.chartbox .cap { text-align: center; font-size: 0.75rem; color: var(--text-dim); margin-top: 0.4rem; }
+svg { width: 100%; height: auto; display: block; }
+svg text { font-family: Verdana, Tahoma, sans-serif; }
 
-.ltr-num { direction: ltr; unicode-bidi: embed; display: inline-block; }
-.ref { font-family: var(--mono); font-size: 0.8em; color: var(--primary); direction: ltr; display: inline-block; }
+footer { margin-top: 3rem; padding-top: 1.2rem; border-top: 1px solid var(--border); font-size: 0.75rem; color: var(--text-dim); text-align: center; line-height: 2; }
+.toc { list-style: none; padding: 0; }
+.toc li { padding: 0.45rem 0; border-bottom: 1px dashed var(--border); display: flex; justify-content: space-between; }
+.toc a { text-decoration: none; color: var(--primary); font-weight: 700; font-size: 0.92rem; }
+.toc span { color: var(--text-dim); font-family: var(--mono); font-size: 0.8rem; }
 
 @media print {
-  body { max-width: none; margin: 0; padding: 0; }
-  .page { padding: 20mm 15mm; min-height: auto; }
+  body { max-width: none; margin: 0; }
+  .page { padding: 18mm 14mm; min-height: auto; }
   header.cover { height: auto; min-height: 297mm; }
   h2 { break-after: avoid; }
-  table { break-inside: avoid; }
-  .card { break-inside: avoid; }
+  table, .card, .chartbox { break-inside: avoid; }
 }
-
 @media screen and (max-width: 800px) {
-  .page { padding: 2rem 1.5rem; min-height: auto; }
-  .g-2, .g-3 { grid-template-columns: 1fr; }
-  header.cover { height: auto; min-height: 100vh; padding: 3rem 1.5rem; }
+  .page { padding: 1.6rem 1.2rem; min-height: auto; }
+  .g-2, .g-3, .g-4 { grid-template-columns: 1fr 1fr; }
+  header.cover { height: auto; min-height: 100vh; padding: 2.5rem 1.4rem; }
 }
 </style>
 </head>
 <body>
 
+<!-- ============ COVER ============ -->
 <header class="cover page">
-  <h4 style="color: var(--accent); margin-bottom: 1rem;">یادداشت سرمایه‌گذار · محرمانه</h4>
-  <h1>بازار هدف، پروفایل مشتری ایده‌آل<br>و استراتژی ورود به بازار</h1>
-  <p style="font-size: 1.05rem; color: var(--text-muted); max-width: 85%; margin-top: 1rem;">
-    تحلیل تجاری مبتنی بر شواهد از بازار قابل دسترسی اوژن، اولویت‌بندی جغرافیایی، جایگاه‌یابی رقابتی و استراتژی درآمد اولیه.
+  <h4 style="color: var(--accent); margin-bottom: 1rem; font-size: 0.85rem;">یادداشت سرمایه‌گذار · محرمانه</h4>
+  <h1>بازار هدف ایران، اندازه بازار<br>و استراتژی ورود به بازار</h1>
+  <p style="font-size: 1rem; color: var(--text-muted); max-width: 90%; margin-top: 1rem; line-height: 2.2;">
+    تحلیل مبتنی بر شواهد از بازار قابل دسترسی «اوژن» در ایران: بخش‌های مشتری، پروفایل مشتری ایده‌آل، محاسبه TAM/SAM/SOM به تومان، تحلیل قیمت‌گذاری و رقبا، و نقشه راه ورود به بازار — جایگزین بخش «بازار هدف» در یادداشت سرمایه‌گذار.
   </p>
 
   <div class="cover-meta">
-    <div><b>پروژه</b>اوژن (Oxenn) — با نام قبلی Seorchable</div>
-    <div><b>نوع سند</b>تحلیل بازار و استراتژی GTM</div>
-    <div><b>تاریخ بررسی</b><span class="ltr-num">2026-10-12</span></div>
-    <div><b>شواهد پایه</b>مخزن زنده + داده‌های صنعت</div>
-    <div><b>طبقه‌بندی</b>کاملاً محرمانه</div>
-    <div><b>تهیه‌شده برای</b>سرمایه‌گذاران Seed / Pre-Seed</div>
+    <div><b>پروژه</b>اوژن (Oxenn) — پلتفرم سئو و رویت‌پذیری هوش مصنوعی</div>
+    <div><b>دامنه جغرافیایی</b>فقط ایران (بدون ارقام جهانی جایگزین)</div>
+    <div><b>تاریخ تدوین</b>مهر ۱۴۰۵ (اکتبر ۲۰۲۶)</div>
+    <div><b>واحد پول</b>تومان (معادل دلاری فقط با نرخ فرضی و برچسب‌دار)</div>
+    <div><b>طبقه‌بندی</b>کاملاً محرمانه — برای سرمایه‌گذاران</div>
+    <div><b>روش</b>داده‌های عمومی ایرانی + برآورد شفاف پایین‌به‌بالا</div>
   </div>
 </header>
 
 <main>
 
-<section class="page">
-  <h2>۱. فرضیه کلان بازار</h2>
-  <p>اوژن در تقاطع ساختاری <strong>بازار جاافتاده نرم‌افزارهای سئو به ارزش ۸۵٫۹۷ میلیارد دلار</strong> <span class="ref">[[22]]</span> و <strong>بازار نوظهور و به‌سرعت در حال رشد خدمات بهینه‌سازی موتورهای زاینده (GEO) به ارزش ۱٫۲۵ میلیارد دلار</strong> <span class="ref">[[7]]</span> قرار دارد. با جایگزین شدن موتورهای پاسخ‌دهی مبتنی بر هوش مصنوعی (ChatGPT، Perplexity، Gemini) به‌جای جست‌وجوی سنتی در کشف ابتدای قیف، برندهای سازمانی و بازار میانی با یک ریسک فوری و اندازه‌گیری‌نشده روبه‌رو هستند: فرسایش نامرئی برند در پاسخ‌های هوش مصنوعی.</p>
+<!-- ============ 1. EXECUTIVE ============ -->
+<section class="page" id="exec">
+  <h2>۱. چکیده اجرایی و فرضیه بازار</h2>
 
-  <p>با این حال، چشم‌انداز فعلی ابزارهای GEO (مانند Profound، Otterly.AI و Peec AI) صرفاً برای بازارها و موجودیت‌های انگلیسی‌زبان غربی بهینه شده است. مزیت رقابتی اولیه اوژن، رقابت مستقیم با بازیگران مسلط جهانی از روز نخست نیست؛ بلکه تسلط بر <strong>بازار کم‌خدمت‌مانده دوزبانه (فارسی/انگلیسی) و منطقه منا در حوزه رویت‌پذیری هوش مصنوعی</strong> است. اوژن با تکیه بر معماری بومی RTL/LTR، پایش پرامپت‌های فارسی و هوش استنادی منطقه‌ای می‌تواند پیش از توسعه به سمت حساب‌های سازمانی جهانی، یک سنگر اولیه کاملاً قابل دفاع را فتح کند.</p>
+  <p>ایران با <strong>۷۳٫۲ میلیون کاربر اینترنت</strong> (نفوذ ۸۱٫۷٪) <span class="ref">[[23]][[20]]</span>، <strong>۳۰۶٬۰۸۰ کسب‌وکار دارای اینماد فعال</strong> (رشد ۴۸٪ در ۱۴۰۳) <span class="ref">[[59]]</span> و بازاری که <strong>۵۷٪ مردم آن از ابزارهای هوش مصنوعی استفاده می‌کنند و ChatGPT با سهم ۹۲٪ ابزار غالب است</strong> <span class="ref">[[16]]</span>، زمینه‌ای با تقاضای واقعی برای «رویت‌پذیری در پاسخ‌های هوش مصنوعی» ایجاد کرده است. با این حال، بررسی منابع نشان می‌دهد <strong>هیچ پلتفرم داخلی اختصاصی برای پایش برند در پاسخ‌های مدل‌های زبانی وجود ندارد</strong>؛ نزدیک‌ترین بازیگران، ابزارهای سئوی سنتی با افزوده‌های تولید محتوای AI (میزفا تولز، جت‌سئو، دیجی‌مارک) <span class="ref">[[78]][[95]]</span> یا خدمات آژانسی AEO/GEO (نوین مارکتینگ) <span class="ref">[[92]]</span> هستند.</p>
 
-  <div class="callout">
-    <b>فرضیه اصلی سرمایه‌گذاری:</b> اوژن نباید در ابتدا به دنبال بازار جهانی کسب‌وکارهای کوچک انگلیسی‌زبان برود. سنگر اولیه بهینه، آژانس‌های دیجیتال مستقر در منا و شرکت‌های فناوری دیاسپورای فارسی‌زبان هستند که سبد برندهای دوزبانه را مدیریت می‌کنند. این بخش تمایل بالا به پرداخت، شدت رقابت پایین و درد فوری در ردیابی استنادات هوش مصنوعی در خط‌های نوشتاری غیرلاتین دارد.
+  <div class="callout navy">
+    <b>فرضیه بازار:</b> اوژن باید در ایران به‌عنوان <b>نخستین پلتفرم فارسی‌زبان رویت‌پذیری هوش مصنوعی (GEO/AEO) با هسته سئوی فنی</b> وارد شود و برخلاف ابزارهای ارزان‌قیمت داخلی، ابتدا <b>آژانس‌های سئو و دیجیتال مارکتینگ و فریلنسرهای حرفه‌ای</b> را هدف بگیرد — گروهی که طبق گزارش «تکنولوژی‌های بازاریابی ایران ۱۴۰۳»، <b>۷۰٪ تعداد کاربران و ۵۰٪ درآمد ارائه‌دهندگان ابزار سئو</b> را تشکیل می‌دهد <span class="ref">[[123]]</span> و امروز برای متمایزسازی رتینرهای ۱۵ تا ۶۵ میلیون تومانی خود <span class="ref">[[30]]</span> به سرویس «گزارش حضور مشتری در ChatGPT» نیاز دارد.
   </div>
 
-  <h2>۲. فهرست مطالب</h2>
-  <ul class="toc">
-    <li><a href="#scope">۳. دامنه محصول و قابلیت‌های راستی‌آزمایی‌شده</a> <span>02</span></li>
-    <li><a href="#icp">۴. پروفایل مشتری ایده‌آل (ICP) و پرسوناهای خریدار</a> <span>03</span></li>
-    <li><a href="#segments">۵. مقایسه رتبه‌بندی‌شده بخش‌های مشتری</a> <span>04</span></li>
-    <li><a href="#geo">۶. اولویت‌بندی بازار جغرافیایی</a> <span>05</span></li>
-    <li><a href="#sizing">۷. تحلیل بازار کل قابل دسترسی (TAM)، بازار قابل خدمت‌دهی (SAM) و بازار قابل کسب (SOM)</a> <span>06</span></li>
-    <li><a href="#competition">۸. چشم‌انداز رقابتی و تمایز</a> <span>07</span></li>
-    <li><a href="#pricing">۹. معماری قیمت‌گذاری و توجیه اقتصادی</a> <span>08</span></li>
-    <li><a href="#gtm">۱۰. نقشه راه سنگر اولیه و توسعه</a> <span>09</span></li>
-    <li><a href="#risks">۱۱. فرض‌های کلیدی، ریسک‌ها و اولویت‌های اعتبارسنجی</a> <span>10</span></li>
-    <li><a href="#evidence">۱۲. رجیستر شواهد</a> <span>11</span></li>
-  </ul>
-</section>
-
-<section class="page" id="scope">
-  <h2>۳. دامنه محصول و قابلیت‌های راستی‌آزمایی‌شده</h2>
-  <p>اندازه‌گیری بازار و استراتژی ورود به بازار باید بر پایه وضعیت پیاده‌سازی واقعی مخزن بنا شود، نه نقشه‌های راه فرضی. ماتریس قابلیت‌های زیر، کد تولیدی راستی‌آزمایی‌شده را از ویژگی‌های برنامه‌ریزی‌شده تفکیک می‌کند.</p>
-
+  <h3>پاسخ کوتاه به پرسش اصلی</h3>
   <table>
-    <thead>
-      <tr>
-        <th style="width: 30%;">حوزه قابلیت</th>
-        <th style="width: 25%;">وضعیت پیاده‌سازی</th>
-        <th>ارتباط تجاری</th>
-      </tr>
-    </thead>
     <tbody>
-      <tr>
-        <td><strong>معماری SaaS چندمستأجری</strong><br>ایزوله‌سازی سطح ردیف PostgreSQL (RLS)، جداسازی سخت‌گیرانه فضای کاری، صف وظایف ناهمگام.</td>
-        <td><span class="badge b-imp">پیاده‌سازی و راستی‌آزمایی‌شده</span></td>
-        <td>زیربنای فروش به آژانس‌های B2B و سازمان‌ها؛ تضمین امنیت داده میان مشتریان رقیب یک آژانس.</td>
-      </tr>
-      <tr>
-        <td><strong>موتور دوزبانه RTL/LTR</strong><br>تایپوگرافی بومی فارسی (یکان‌بخ/پیدا) و انگلیسی، تغییر پویای جهت صفحه.</td>
-        <td><span class="badge b-imp">پیاده‌سازی و راستی‌آزمایی‌شده</span></td>
-        <td>خندق رقابتی حیاتی برای بازارهای منا/دیاسپورا؛ رقبا فاقد رابط کاربری بومی RTL و پارسر فارسی برای مدل‌های زبانی هستند.</td>
-      </tr>
-      <tr>
-        <td><strong>رویت‌پذیری هوش مصنوعی و پایش پرامپت</strong><br>ردیابی ذکر برند، استنادات و احساسات (sentiment) در پاسخ‌های مدل‌های زبانی.</td>
-        <td><span class="badge b-imp">هسته پیاده‌سازی‌شده</span> <span class="badge b-plan">در حال مقیاس‌سازی</span></td>
-        <td>پیشران اصلی ارزش در GEO؛ توجیه‌کننده قیمت پرمیوم (۲۰۰ تا ۵۰۰ دلار در ماه).</td>
-      </tr>
-      <tr>
-        <td><strong>سئوی فنی و خزش</strong><br>تحلیل معماری سایت، اعتبارسنجی اسکیما، یکپارچه‌سازی Core Web Vitals.</td>
-        <td><span class="badge b-imp">پیاده‌سازی‌شده</span></td>
-        <td>الزام حداقلی آژانس‌های سئو؛ محرک پذیرش اولیه محصول و ماندگاری مشتری.</td>
-      </tr>
-      <tr>
-        <td><strong>گراف دانش و هوش موجودیت</strong><br>نگاشت روابط معنایی میان برندها، محصولات و استنادات.</td>
-        <td><span class="badge b-plan">برنامه‌ریزی‌شده / نسبی</span></td>
-        <td>فرصت ارتقای فروش با ارزش بالا برای سازمان‌ها؛ اوژن را از ردیاب‌های ساده پرامپت متمایز می‌کند.</td>
-      </tr>
-      <tr>
-        <td><strong>گزارش‌دهی وایت‌لیبل آژانسی</strong><br>تولید خودکار PDF و پورتال مشتری برای گردش کار آژانس‌ها.</td>
-        <td><span class="badge b-hyp">فرضی / نقشه راه</span></td>
-        <td>برای مشتری ایده‌آل آژانسی رده یک ضروری است؛ باید در فاز ۱۱ اجرا اولویت یابد.</td>
-      </tr>
+      <tr><td style="width:42%"><strong>بازار نرم‌افزار مرتبط (TAM — سال ۱۴۰۵)</strong></td><td><span class="num">۱۱۵–۱۳۵</span> میلیارد تومان در سال (پایه: ۱۲۵) <span class="badge b-modeled">مدل‌سازی‌شده</span></td></tr>
+      <tr><td><strong>بخش قابل خدمت‌دهی (SAM)</strong></td><td><span class="num">۴۵–۶۰</span> میلیارد تومان در سال (پایه: ۵۰) <span class="badge b-modeled">مدل‌سازی‌شده</span></td></tr>
+      <tr><td><strong>SOM سه‌ساله (درآمد تکرارشونده سالانه)</strong></td><td>محافظه‌کارانه <span class="num">۳٫۸</span> · پایه <span class="num">۹</span> · خوش‌بینانه <span class="num">۱۸</span> میلیارد تومان <span class="badge b-modeled">مدل‌سازی‌شده</span></td></tr>
+      <tr><td><strong>SOM پنج‌ساله</strong></td><td>محافظه‌کارانه <span class="num">۱۲</span> · پایه <span class="num">۳۰</span> · خوش‌بینانه <span class="num">۶۰</span> میلیارد تومان <span class="badge b-modeled">مدل‌سازی‌شده</span></td></tr>
+      <tr><td><strong>نخستین بخش هدف</strong></td><td>آژانس‌های سئو/دیجیتال و فریلنسرهای حرفه‌ای (استخر پرداخت‌کننده اثبات‌شده ابزار سئو)</td></tr>
+      <tr><td><strong>قیمت‌گذاری پیشنهادی</strong></td><td>از <span class="num">۱٫۹</span> میلیون تومان/ماه (حرفه‌ای) تا <span class="num">۴٫۹</span> میلیون (آژانسی) و سازمانی از <span class="num">۱۲</span> میلیون <span class="badge b-prop">پیشنهادی — اعتبارسنجی‌نشده</span></td></tr>
     </tbody>
   </table>
 
-  <div class="callout">
-    <b>مفهوم استراتژیک:</b> اوژن در حال حاضر یک موتور هوش در سطح تولید و یک رابط کاربری دوزبانه منحصربه‌فرد در اختیار دارد، اما فاقد ابزار گردش کار اختصاصی آژانس‌ها (گزارش‌های وایت‌لیبل، مدیریت کاربران مشتری) است که برای بهره‌برداری مالی کامل از بخش آژانسی لازم است. بستن این شکاف، اولویت تجاری فوری است.
+  <div class="callout risk">
+    <b>هشدار صداقت سرمایه‌گذاری:</b> با نرخ آزاد دلار در محدوده <span class="num">۲۳۵٬۰۰۰–۲۷۰٬۰۰۰</span> تومان (مهر ۱۴۰۵) <span class="ref">[[155]][[154]][[160]]</span>، حتی TAM نرم‌افزاری ایران معادل دلاری کوچکی دارد (پایه ≈ <span class="num">۵۰۰</span> هزار دلار در سال؛ نرخ فرضی ≈ ۲۵۰ هزار تومان/دلار). منطق سرمایه‌گذاری در ایران «درآمد دلاری» نیست؛ بلکه <b>تصاحب رهبری دسته‌بندی فارسی‌زبان، رشد درآمد تومانی همگام با تورم</b> (بازار تبلیغات دیجیتال از ۱۱ همت در ۱۴۰۲ به ۳۲٫۲ همت در ۱۴۰۴ رسید <span class="ref">[[10]][[16]]</span>) <b>و استفاده از ایران به‌عنوان سکوی پرش به بازارهای فارسی‌زبان و منا</b> است.
   </div>
+
+  <h3>فهرست مطالب</h3>
+  <ul class="toc">
+    <li><a href="#method">۲. روش‌شناسی و محدودیت‌های داده</a> <span>02</span></li>
+    <li><a href="#stats">۳. آمار ساختاری اقتصاد دیجیتال ایران</a> <span>02</span></li>
+    <li><a href="#segments">۴. بخش‌بندی و رتبه‌بندی مشتریان ایرانی</a> <span>03</span></li>
+    <li><a href="#icp">۵. پروفایل مشتری ایده‌آل و محرک خرید</a> <span>04</span></li>
+    <li><a href="#sizing">۶. محاسبه TAM / SAM / SOM ایران</a> <span>05</span></li>
+    <li><a href="#pricing">۷. قیمت‌گذاری و تمایل به پرداخت</a> <span>07</span></li>
+    <li><a href="#competition">۸. رقبا و جایگزین‌ها در ایران</a> <span>08</span></li>
+    <li><a href="#scenarios">۹. سناریوهای مالی و تحلیل حساسیت</a> <span>09</span></li>
+    <li><a href="#gtm">۱۰. کانال‌های جذب و نقشه راه ورود</a> <span>10</span></li>
+    <li><a href="#risks">۱۱. ریسک‌ها و محدودیت‌های عملیاتی ایران</a> <span>11</span></li>
+    <li><a href="#answers">۱۲. پاسخ نهایی به هفت پرسش کلیدی</a> <span>12</span></li>
+    <li><a href="#sources">۱۳. رجیستر شواهد</a> <span>13</span></li>
+  </ul>
 </section>
 
+<!-- ============ 2-3. METHOD + STATS ============ -->
+<section class="page" id="method">
+  <h2>۲. روش‌شناسی و محدودیت‌های داده</h2>
+  <p>این تحلیل صرفاً از منابع عمومی ایرانی و قابل استناد تهیه شده است: گزارش سالانه یکتانت (۱۴۰۴)، گزارش تجارت الکترونیک ایران (۱۴۰۳)، گزارش «تکنولوژی‌های بازاریابی ایران ۱۴۰۳» تکراسا اینسایت، آمارهای رسمی اینماد/دانش‌بنیان، صفحات قیمت عمومی ابزارها و خدمات سئو، و نرخ ارز بازار آزاد. <strong>هیچ آمار جهانی جایگزین داده ایرانی نشده و هیچ عددی جعل نشده است.</strong></p>
+  <ul class="muted">
+    <li><strong>تمایز اندازه‌گیری و مدل‌سازی:</strong> هر عدد با برچسب <span class="badge b-measured">اندازه‌گیری‌شده</span> (مستقیم از منبع) یا <span class="badge b-modeled">مدل‌سازی‌شده</span> (مشتق از فرمول و فرض شفاف) مشخص شده است.</li>
+    <li><strong>محدودیت ۱:</strong> تنها برآورد تخصصی اندازه بازار ابزارهای سئو ایران مربوط به سال ۱۴۰۲ است (تکراسا) <span class="ref">[[123]]</span>؛ ارقام ۱۴۰۵ با اعمال نرخ رشد گزارش‌شده همان منبع (۴۰–۵۰٪) مدل‌سازی شده‌اند.</li>
+    <li><strong>محدودیت ۲:</strong> تحقیق میدانی (مصاحبه با آژانس‌ها) انجام نشده؛ تمایل به پرداخت از «قیمت‌های منتشرشده رقبا و خدمات» استنتاج شده و باید با ۲۰ مصاحبه اعتبارسنجی شود.</li>
+    <li><strong>محدودیت ۳:</strong> نبود رقیب داخلی رویت‌پذیری AI بر پایه جست‌وجوی منابع عمومی است (اطمینان متوسط — فقدان شواهد، دلیل قطعی نبود وجود نیست).</li>
+    <li><strong>محدودیت ۴:</strong> قیمت‌های منتشرشده فروشندگان ایرانی ممکن است با تخفیف‌های واقعی معامله تفاوت داشته باشند.</li>
+    <li><strong>فرض نرخ ارز:</strong> هر معادل دلاری با نرخ فرضی <span class="num">۲۵۰٬۰۰۰</span> تومان/دلار محاسبه و صریحاً برچسب خورده است؛ دامنه واقعی بازار آزاد در مهر ۱۴۰۵ بین <span class="num">۲۳۵٬۹۴۰</span> <span class="ref">[[160]]</span> و <span class="num">۲۶۷٬۷۱۰</span> تومان <span class="ref">[[154]]</span> نوسان داشت.</li>
+  </ul>
+
+  <h2 id="stats">۳. آمار ساختاری اقتصاد دیجیتال ایران (پایه تقاضا)</h2>
+  <div class="grid g-4">
+    <div class="card stat"><div class="v">۷۳٫۲ <small>میلیون</small></div><div class="k">کاربر اینترنت (ژانویه ۲۰۲۵) — نفوذ ۸۱٫۷٪ <span class="ref">[[23]][[20]]</span></div></div>
+    <div class="card stat"><div class="v">۳۰۶٬۰۸۰</div><div class="k">کسب‌وکار با اینماد فعال تا پایان ۱۴۰۳ (رشد ۴۸٪) <span class="ref">[[59]]</span></div></div>
+    <div class="card stat"><div class="v">۳۲٫۲ <small>همت</small></div><div class="k">بازار تبلیغات دیجیتال ایران در ۱۴۰۴ <span class="ref">[[16]][[12]]</span></div></div>
+    <div class="card stat"><div class="v">۵٬۵۰۰ <small>همت</small></div><div class="k">ارزش معاملات تجارت الکترونیک در ۱۴۰۳ <span class="ref">[[101]]</span></div></div>
+    <div class="card stat"><div class="v">۵٫۶٪</div><div class="k">سهم خرده‌فروشی آنلاین از کل خرده‌فروشی (بدون طلا، ۱۴۰۳) <span class="ref">[[96]][[98]]</span></div></div>
+    <div class="card stat"><div class="v">۷٬۴۰۰+</div><div class="k">وب‌سایت ناشر رپورتاژ آگهی (رشد ۵۸٪ در ۱۴۰۴) <span class="ref">[[16]]</span></div></div>
+    <div class="card stat"><div class="v">۱۲٬۶۹۲</div><div class="k">شرکت دانش‌بنیان (بهمن ۱۴۰۴) <span class="ref">[[112]]</span></div></div>
+    <div class="card stat"><div class="v">۵۷٪ / ۹۲٪</div><div class="k">استفاده ایرانیان از AI / سهم ChatGPT میان آن‌ها <span class="ref">[[16]][[136]]</span></div></div>
+  </div>
+
+  <h3>چرا این آمارها برای اوژن مهم‌اند؟</h3>
+  <ul>
+    <li><strong>رشد پرشتاب بودجه‌های دیجیتال حتی در بحران:</strong> بودجه تبلیغات دیجیتال پس از جنگ ۱۲روزه تنها ۱۶ روز و پس از قطعی اینترنت دی‌ماه ۳۷ روز تا بازیابی زمان برد <span class="ref">[[16]]</span> — تقاضای بازاریابی دیجیتال در ایران تاب‌آور است، اما نوسان کوتاه‌مدت شدید دارد.</li>
+    <li><strong>اقتصاد محتوای سئومحور در حال انبساط است:</strong> ۲۵۱ هزار رپورتاژ آگهی با ارزش اسمی ۴۷۴ میلیارد تومان در ۱۴۰۴ منتشر شد (رشد ۶۶٪ و ۳۲٪) <span class="ref">[[16]]</span> — نشانه مستقیم سرمایه‌گذاری کسب‌وکارها روی رویت‌پذیری ارگانیک.</li>
+    <li><strong>پذیرش AI عام شده اما رایگان‌محور است:</strong> ۸۶٪ کاربران ایرانی هوش مصنوعی هزینه‌ای پرداخت نمی‌کنند <span class="ref">[[16]]</span> — پس محصول AI باید به <strong>کسب‌وکارها</strong> (نه مصرف‌کنندگان) فروخته شود.</li>
+    <li><strong>مهاجرت از اینستاگرام به وب‌سایت:</strong> فروشگاه‌های اینستاگرامی ۴۰٪ کاهش یافتند (از ~۹۶۰ هزار به ~۵۶۴ هزار) و فیلترینگ، کسب‌وکارها را به راه‌اندازی سایت سوق داده است <span class="ref">[[16]][[123]]</span> — پایه رشد تقاضای سئو.</li>
+  </ul>
+</section>
+
+<!-- ============ 4. SEGMENTS ============ -->
+<section class="page" id="segments">
+  <h2>۴. بخش‌بندی و رتبه‌بندی مشتریان ایرانی</h2>
+  <p>رتبه‌بندی بر اساس <strong>جذابیت تجاری</strong> (شدت نیاز × توان پرداخت × دسترس‌پذیری × ماندگاری × شدت رقابت) است، نه صرفاً تعداد. امتیازها از ۱۰ و مبتنی بر شواهد جدول زیر است.</p>
+
+  <div class="chartbox">
+    <svg viewBox="0 0 760 350" role="img" aria-label="نمودار رتبه‌بندی جذابیت بخش‌های مشتری">
+      <line x1="260" y1="10" x2="260" y2="330" stroke="#e2e8f0" stroke-width="1"/>
+      <!-- bars: x=260 start, width = score*46 -->
+      <g font-size="12" fill="#0f172a">
+        <text x="250" y="42" text-anchor="end">آژانس‌های سئو/دیجیتال و فریلنسرهای حرفه‌ای</text>
+        <rect x="260" y="26" width="419" height="24" rx="5" fill="#1e3a8a"/>
+        <text x="690" y="43" fill="#1e3a8a" font-weight="bold">۹٫۱ — رده ۱</text>
+
+        <text x="250" y="88" text-anchor="end">تجارت الکترونیک متوسط/بزرگ با تیم داخلی</text>
+        <rect x="260" y="72" width="359" height="24" rx="5" fill="#2d4ea8"/>
+        <text x="630" y="89" fill="#2d4ea8" font-weight="bold">۷٫۸ — رده ۱</text>
+
+        <text x="250" y="134" text-anchor="end">رسانه‌ها و ناشران آنلاین محتوامحور</text>
+        <rect x="260" y="118" width="331" height="24" rx="5" fill="#3b5bb5"/>
+        <text x="602" y="135" fill="#3b5bb5" font-weight="bold">۷٫۲ — رده ۲</text>
+
+        <text x="250" y="180" text-anchor="end">شرکت‌های فناوری و SaaS داخلی</text>
+        <rect x="260" y="164" width="317" height="24" rx="5" fill="#4a69c0"/>
+        <text x="588" y="181" fill="#4a69c0" font-weight="bold">۶٫۹ — رده ۲</text>
+
+        <text x="250" y="226" text-anchor="end">برندهای بزرگ و هلدینگ‌ها</text>
+        <rect x="260" y="210" width="285" height="24" rx="5" fill="#b45309"/>
+        <text x="556" y="227" fill="#b45309" font-weight="bold">۶٫۲ — رده ۲</text>
+
+        <text x="250" y="272" text-anchor="end">فروشگاه‌های اجتماعی (اینستاگرام/پیام‌رسان)</text>
+        <rect x="260" y="256" width="143" height="24" rx="5" fill="#94a3b8"/>
+        <text x="414" y="273" fill="#64748b" font-weight="bold">۳٫۱ — تعویق</text>
+
+        <text x="250" y="318" text-anchor="end">SMEهای بدون وب‌سایت فعال</text>
+        <rect x="260" y="302" width="83" height="24" rx="5" fill="#cbd5e1"/>
+        <text x="354" y="319" fill="#64748b" font-weight="bold">۱٫۸ — حذف</text>
+      </g>
+    </svg>
+    <div class="cap">شکل ۱ — امتیاز جذابیت تجاری بخش‌های مشتری ایران (مدل‌سازی‌شده بر پایه شواهد جدول زیر)</div>
+  </div>
+
+  <table>
+    <thead>
+      <tr><th>بخش</th><th>اندازه جمعیت واجد شرایط (برآورد شفاف)</th><th>بودجه/شواهد پرداخت</th><th>دلیل رتبه</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>۱. آژانس‌های سئو/دیجیتال + فریلنسرهای حرفه‌ای</strong> <span class="badge b-tier1">سنگر اولیه</span></td>
+        <td><span class="num">۳٬۰۰۰–۶٬۰۰۰</span> ارائه‌دهنده خدمات فعال (استنتاج: ۶–۸ هزار مشترک پرداخت‌کننده ابزار، با سهم ۷۰٪ی فریلنسرها)؛ دایرکتوری Discolike عدد ۸٬۶۰۰ شرکت SEO/PPC را فهرست کرده که <span class="badge b-low">اطمینان پایین — سقف بالایی</span> <span class="ref">[[56]][[123]]</span></td>
+        <td>هم‌اکنون خریدار اثبات‌شده ابزارند: بازار ابزار سئو ۳۵–۴۵ میلیارد تومان (۱۴۰۲)؛ فریلنسرها ۷۰٪ کاربران و ۵۰٪ درآمد ابزارفروشان <span class="ref">[[123]]</span></td>
+        <td>بیشترین شدت نیاز (مدیریت هم‌زمان چند مشتری)، بودجه جاری ابزار، نیاز فوری به سرویس جدید AI برای تمایز رتینر؛ کوتاه‌ترین چرخه فروش</td>
+      </tr>
+      <tr>
+        <td><strong>۲. تجارت الکترونیک متوسط/بزرگ با تیم داخلی</strong></td>
+        <td>از ۳۰۶٬۰۸۰ اینماد فعال <span class="ref">[[59]]</span>، حدود ۱۰٪ بالایی (~۳۰٬۰۰۰) بودجه بازاریابی معنادار دارند؛ دارای تیم سئوی داخلی: <span class="num">۳٬۰۰۰–۵٬۰۰۰</span> <span class="badge b-modeled">مدل</span></td>
+        <td>تعرفه خدمات سئوی برون‌سپاری ۱۵–۶۵ میلیون تومان/ماه <span class="ref">[[30]]</span> — ابزار چند میلیونی در برابر آن ناچیز است</td>
+        <td>نیاز مستقیم به پایش رقبا و رویت‌پذیری AI در دسته‌های پرقابت (طلا، لوازم خانگی، آرایشی — پیشتازان رشد بودجه تبلیغاتی ۱۴۰۴ <span class="ref">[[16]]</span>)</td>
+      </tr>
+      <tr>
+        <td><strong>۳. رسانه‌ها و ناشران آنلاین</strong></td>
+        <td><span class="num">۷٬۴۰۰+</span> ناشر رپورتاژ آگهی <span class="ref">[[16]]</span> + ۲۸ خبرگزاری رسمی <span class="ref">[[145]]</span>؛ واجد شرایط پرداخت برای ابزار: ~<span class="num">۱٬۵۰۰–۲٬۵۰۰</span> <span class="badge b-modeled">مدل</span></td>
+        <td>گردش مالی ۴۷۴ میلیارد تومانی رپورتاژ نشان‌دهنده اقتصاد محتوای سئومحور است <span class="ref">[[16]]</span></td>
+        <td>ترافیک ارگانیک = درآمد مستقیم آن‌ها؛ حساسیت بالا به تغییرات SERP و AI Overviews؛ اما بودجه ابزار محدودتر از آژانس‌ها</td>
+      </tr>
+      <tr>
+        <td><strong>۴. شرکت‌های فناوری و SaaS داخلی</strong></td>
+        <td>از ۱۲٬۶۹۲ شرکت دانش‌بنیان <span class="ref">[[112]]</span>، زیرمجموعه نرم‌افزاری/خدماتی با نیاز جذب ارگانیک: ~<span class="num">۲٬۰۰۰–۳٬۰۰۰</span> <span class="badge b-modeled">مدل</span></td>
+        <td>تیم‌های رشد با بودجه ابزار؛ عادت‌پذیر به SaaS</td>
+        <td>خریداران منطقی با چرخه کوتاه؛ اما اندازه کل بخش کوچک است</td>
+      </tr>
+      <tr>
+        <td><strong>۵. برندهای بزرگ و سازمانی</strong></td>
+        <td>~<span class="num">۱٬۰۰۰–۳٬۰۰۰</span> برند با بودجه دیجیتال (اشاره: ۱٬۲۸۱ برند فقط در تبلیغات محیطی تهران <span class="ref">[[16]]</span>) <span class="badge b-modeled">مدل</span></td>
+        <td>بالاترین بودجه (رتینرهای ۳۵ میلیون+/ماه <span class="ref">[[29]][[118]]</span>)</td>
+        <td>ACV بالا اما چرخه فروش ۶–۱۲ ماهه، نیازمند فاکتور رسمی/مناقصه و اغلب از مسیر آژانس خرید می‌کنند — فاز دوم</td>
+      </tr>
+      <tr>
+        <td><strong>۶. فروشگاه‌های اجتماعی</strong></td>
+        <td>~۵۶۴ هزار فروشگاه اینستاگرامی <span class="ref">[[16]]</span> + ۸۹ هزار فروشگاه پیام‌رسان‌های داخلی <span class="ref">[[16]]</span></td>
+        <td>توان پرداخت پایین؛ بدون وب‌سایت محوری</td>
+        <td><strong>تعویق عمدی:</strong> محصول وب‌محور فعلاً ارزشی برای آن‌ها ندارد</td>
+      </tr>
+    </tbody>
+  </table>
+  <p class="muted">مجموع استخر هدف‌گیری‌شده (بدون احتساب مضاعف): تقریباً <strong><span class="num">۸٬۰۰۰–۱۱٬۰۰۰</span> حساب واجد پرداخت</strong> — جمع جبری بخش‌های ۱ تا ۴ با کسر هم‌پوشانی (بسیاری از فریلنسرها مشتری آژانس‌ها نیز هستند).</p>
+</section>
+
+<!-- ============ 5. ICP ============ -->
 <section class="page" id="icp">
-  <h2>۴. پروفایل مشتری ایده‌آل (ICP) و پرسوناهای خریدار</h2>
-  <p>بر اساس تقاطع قابلیت‌های راستی‌آزمایی‌شده اوژن (ردیابی دوزبانه هوش مصنوعی، سئوی فنی) و فوریت بازار، پروفایل مشتری ایده‌آل اولیه به شرح زیر تعریف می‌شود:</p>
+  <h2>۵. پروفایل مشتری ایده‌آل (ICP)، خریدار اقتصادی و محرک خرید</h2>
 
   <div class="grid g-2">
     <div class="card highlight">
-      <h3>مشتری ایده‌آل اولیه: آژانس دیجیتال دوزبانه</h3>
-      <p><strong>مشخصات شرکت:</strong> ۱۵ تا ۱۰۰ کارمند؛ درآمد سالانه تکرارشونده (ARR) بین ۲ تا ۱۵ میلیون دلار؛ مستقر در امارات، قطر یا قطب‌های دیاسپورای فارسی‌زبان (لندن، تورنتو، لس‌آنجلس).</p>
-      <p><strong>سبد مشتریان:</strong> مدیریت بیش از ۱۰ برند، شامل سازمان‌های منطقه‌ای منا، تجارت الکترونیک و شرکت‌های فناوری فرامرزی که به رویت‌پذیری هم‌زمان انگلیسی و فارسی/عربی نیاز دارند.</p>
-      <p><strong>رویداد محرک:</strong> یک مشتری بزرگ می‌پرسد: «وقتی کاربران در دسته ما از ChatGPT/Perplexity توصیه می‌خواهند، آیا ما در پاسخ‌های آن ظاهر می‌شویم؟» آژانس هیچ ابزاری برای پاسخ به این پرسش ندارد.</p>
+      <h3>ICP اولیه: آژانس سئو/دیجیتال ایرانی</h3>
+      <ul style="font-size: 0.88rem;">
+        <li><strong>اندازه:</strong> ۳ تا ۳۰ مشتری فعال سئو؛ درآمد ماهانه ۲۰۰ میلیون تومان+ (بر مبنای تعرفه‌های رایج ۸–۶۵ میلیون تومان به ازای هر مشتری <span class="ref">[[36]][[30]]</span>)</li>
+        <li><strong>مستقر در:</strong> تهران، مشهد، اصفهان، شیراز، کرج</li>
+        <li><strong>وضعیت ابزار فعلی:</strong> مشترک میزفا تولز/جت‌سئو/کیوردچی یا اکانت اشتراکی Semrush/Ahrefs از واسطه‌ها <span class="ref">[[123]]</span></li>
+        <li><strong>فشار تجاری:</strong> رقبا در حال افزودن «خدمات GEO/AEO» به پیشنهاد فروش خود هستند (نوین مارکتینگ رسماً خدمات سئوی هوش مصنوعی/AEO/GEO می‌فروشد <span class="ref">[[92]]</span>)</li>
+      </ul>
     </div>
-    <div class="card">
-      <h3>خریدار اقتصادی: بنیان‌گذار آژانس / رئیس بخش دیجیتال</h3>
-      <p><strong>نقطه درد:</strong> از دست دادن قراردادهای رتینر به بوتیک‌های تخصصی بازاریابی هوش مصنوعی؛ ناتوانی در گزارش بازگشت سرمایه رویت‌پذیری AI با ابزارهای سئوی سنتی (Semrush/Ahrefs).</p>
-      <p><strong>اختیار بودجه:</strong> کنترل بودجه ابزار نرم‌افزاری و گزارش‌دهی مشتری. در صورت تضمین یک قرارداد سالانه بیش از ۵۰ هزار دلار، حاضر است ۲۰۰ تا ۵۰۰ دلار در ماه به ازای هر فضای کاری بپردازد.</p>
-      <p><strong>چرخه فروش:</strong> ۱۴ تا ۳۰ روز. به‌شدت وابسته به اثبات مفهوم (اجرای ممیزی رایگان دوزبانه هوش مصنوعی روی دامنه مشتری).</p>
-    </div>
-  </div>
-
-  <h3>پرسونای کاربر نهایی: استراتژیست سئوی فنی / GEO</h3>
-  <p>کاربر روزانه اوژن یک بازاریاب فنی سطح میانی است. این کاربر به داده‌های عمیق تشخیصی (اعتبارسنجی اسکیما، نگاشت منابع استناد، گزارش‌های مهندسی پرامپت) نیاز دارد، نه فقط داشبوردهای مدیریتی. موتور سئوی فنی راستی‌آزمایی‌شده اوژن و ثبت خام پاسخ‌های مدل زبانی، دقیقاً نیاز این کاربر به هوش قابل اقدام را برآورده می‌کند و پس از امضای قرارداد توسط خریدار اقتصادی، ریسک ریزش را کاهش می‌دهد.</p>
-</section>
-
-<section class="page" id="segments">
-  <h2>۵. مقایسه رتبه‌بندی‌شده بخش‌های مشتری</h2>
-  <p>بخش‌ها بر اساس <strong>جذابیت تجاری</strong> (تمایل به پرداخت × دسترس‌پذیری × شدت رقابت) رتبه‌بندی شده‌اند، نه صرفاً بر اساس اندازه کل بازار.</p>
-
-  <table>
-    <thead>
-      <tr>
-        <th>بخش</th>
-        <th>رده</th>
-        <th>تمایل به پرداخت</th>
-        <th>شدت رقابت</th>
-        <th>جمع‌بندی</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><strong>آژانس‌های دیجیتال منا/دیاسپورا</strong><br>مدیریت برندهای دوزبانه.</td>
-        <td><span class="badge b-tier1">رده ۱</span></td>
-        <td>بالا (۳۰۰ تا ۵۰۰ دلار در ماه)</td>
-        <td>پایین (بدون ابزار بومی دوزبانه GEO)</td>
-        <td><strong>سنگر اولیه.</strong> درد فوری، ارزش قرارداد سالانه بالا، چرخش پایین در صورت یکپارچه‌سازی با گزارش‌دهی مشتری.</td>
-      </tr>
-      <tr>
-        <td><strong>SaaSهای B2B بازار میانی (تیم داخلی)</strong><br>شرکت‌های فناوری با هدف‌گذاری جهانی + منا.</td>
-        <td><span class="badge b-tier1">رده ۱</span></td>
-        <td>بالا (۲۰۰ تا ۴۰۰ دلار در ماه)</td>
-        <td>متوسط (رقابت با HubSpot/Semrush)</td>
-        <td><strong>سنگر اولیه مشترک.</strong> تقاضای قوی برای رویت‌پذیری AI؛ اوژن با عمق فنی و پشتیبانی دوزبانه برنده می‌شود.</td>
-      </tr>
-      <tr>
-        <td><strong>برندهای سازمانی جهانی</strong><br>Fortune 500، املاک وب عظیم.</td>
-        <td><span class="badge b-tier2">رده ۲</span></td>
-        <td>بسیار بالا (بیش از ۱۰۰۰ دلار در ماه)</td>
-        <td>شدید (Profound، Otterly، ابزارهای داخلی سفارشی)</td>
-        <td><strong>هدف توسعه.</strong> نیازمند SOC2، SSO و پشتیبانی اختصاصی. تنها پس از تسلط بر رده ۱ پیگیری شود.</td>
-      </tr>
-      <tr>
-        <td><strong>SMEها و کسب‌وکارهای محلی داخل ایران</strong><br>تجارت الکترونیک محلی، خدمات.</td>
-        <td><span class="badge b-tier3">رده ۳</span></td>
-        <td>پایین (۲۰ تا ۵۰ دلار در ماه)</td>
-        <td>بالا (ابزارهای محلی ارزان، کار دستی)</td>
-        <td><strong>اجتناب شود.</strong> هزینه جذب بالا، موانع شدید زیرساخت پرداخت، فوریت پایین جست‌وجوی هوش مصنوعی.</td>
-      </tr>
-      <tr>
-        <td><strong>SMBهای غربی (فقط انگلیسی)</strong><br>کسب‌وکارهای محلی، وبلاگ‌های پایه.</td>
-        <td><span class="badge b-tier3">رده ۳</span></td>
-        <td>پایین (۲۹ دلار در ماه)</td>
-        <td>شدید (Otterly، Semrush، ابزارهای رایگان AI)</td>
-        <td><strong>به تعویق بیفتد.</strong> رقابت قیمتی تا کف؛ عمق فنی اوژن در این بخش بیش از حد نیاز و غیرسودآور است.</td>
-      </tr>
-    </tbody>
-  </table>
-</section>
-
-<section class="page" id="geo">
-  <h2>۶. اولویت‌بندی بازار جغرافیایی</h2>
-  <p>استراتژی جغرافیایی باید <em>جذابیت بازار</em> را از <em>دسترس‌پذیری عملیاتی</em> تفکیک کند. معماری دوزبانه اوژن یک فرصت آربیتراژ جغرافیایی منحصربه‌فرد ایجاد می‌کند.</p>
-
-  <div class="grid g-2">
-    <div class="card">
-      <h3>اولویت ۱: منا (امارات، قطر، عربستان) و دیاسپورا</h3>
-      <p><strong>مبنا:</strong> بازار تبلیغات و آژانس‌های خاورمیانه ۸٫۱۸ میلیارد دلار ارزش دارد و به‌سرعت رشد می‌کند <span class="ref">[[30]]</span>. هزینه تبلیغات دیجیتال در منا با حرکت به سمت استراتژی‌های محتوای شخصی‌سازی‌شده در حال جهش است <span class="ref">[[35]]</span>. آژانس‌های این منطقه سبدهای دوزبانه (عربی/فارسی/انگلیسی) با ارزش بالا را مدیریت می‌کنند و به ریل‌های پرداخت بین‌المللی (Stripe، Wise) دسترسی دارند.</p>
-      <p><strong>مزیت اوژن:</strong> پیشگام در ردیابی استنادات هوش مصنوعی بومی RTL. ابزارهای غربی در تجزیه موجودیت‌های معنایی فارسی/عربی و ساختار پرامپت‌های راست‌به‌چپ ناتوان‌اند.</p>
-    </div>
-    <div class="card">
-      <h3>اولویت ۲: ایران (داخلی)</h3>
-      <p><strong>مبنا:</strong> حجم بالای استعداد فنی و کسب‌وکارهای دیجیتال داخلی. با این حال، بازار تبلیغات ایران کندتر از منطقه منا رشد می‌کند <span class="ref">[[32]]</span>.</p>
-      <p><strong>محدودیت:</strong> تحریم‌های شدید بین‌المللی و انزوای پرداخت‌های فرامرزی، درآمدزایی SaaS را برای استارتاپی که به زیرساخت ابری جهانی (Vercel، AWS، Stripe) متکی است، از نظر عملیاتی پرخطر می‌کند. <strong>توصیه:</strong> از ایران صرفاً به‌عنوان قطب استعداد فنی و تحقیق‌وتوسعه استفاده شود، نه بازار اصلی درآمد.</p>
+    <div class="card navy">
+      <h3>خریدار اقتصادی و کاربران</h3>
+      <ul style="font-size: 0.88rem;">
+        <li><strong>خریدار اقتصادی:</strong> مؤسس/مدیرعامل آژانس — تصمیم‌گیرنده بودجه ابزار و قیمت رتینر</li>
+        <li><strong>کاربر روزمره:</strong> متخصص سئوی فنی/استراتژیست محتوا — مصرف‌کننده داده‌های خام پرامپت و استناد</li>
+        <li><strong>ذی‌نفع گزارش:</strong> مشتری نهایی آژانس (برند) — گیرنده گزارش «حضور در ChatGPT»</li>
+        <li><strong>انگیزه خرید:</strong> حفظ و ارتقای رتینر + ساخت خط درآمدی جدید (سرویس GEO) بدون استخدام نیرو</li>
+      </ul>
     </div>
   </div>
 
-  <div class="card" style="margin-top: 1.5rem;">
-    <h3>اولویت ۳: بازارهای جهانی انگلیسی‌زبان (آمریکا، انگلستان، اروپا)</h3>
-    <p><strong>مبنا:</strong> بازار کل قابل دسترسی عظیم (بیش از ۸۵ میلیارد دلار نرم‌افزار سئو <span class="ref">[[22]]</span>)، اما شدت رقابت بی‌رحمانه. استارتاپ‌های GEO مانند Profound و Otterly سرمایه کلان جذب کرده و در بازار مستقر شده‌اند.</p>
-    <p><strong>استراتژی:</strong> بازاریابی گسترده در این منطقه انجام نشود. ورود فقط از طریق حساب‌های «اسب تروآ»: بنیان‌گذاران دیاسپورا که برندهای جهانی را مدیریت می‌کنند، اوژن را از طریق قابلیت‌های فارسی کشف کرده و سپس به دلیل موتور تشخیص فنی برتر، آن را برای املاک انگلیسی‌زبان خود نیز می‌پذیرند.</p>
+  <h3>رویدادهای محرک خرید (Trigger Events)</h3>
+  <div class="flow">
+    <div class="step"><b>محرک ۱</b>پرسش مشتری: «در ChatGPT دیده می‌شویم؟» — بدون ابزار پاسخ‌دهی</div>
+    <div class="arr">←</div>
+    <div class="step"><b>محرک ۲</b>رقیب آژانس، سرویس AEO/GEO را به فهرست خدمات اضافه می‌کند <span class="ref">[[92]]</span></div>
+    <div class="arr">←</div>
+    <div class="step"><b>محرک ۳</b>گسترش AI Overviews گوگل در نتایج فارسی و افت کلیک ارگانیک مشتریان</div>
+    <div class="arr">←</div>
+    <div class="step"><b>محرک ۴</b>نیاز به گزارش متمایز برای تمدید قرارداد رتینر</div>
+  </div>
+
+  <h3>مسیر خرید واقعی در بازار ایران</h3>
+  <div class="flow">
+    <div class="step"><b>۱</b>استفاده از ابزار رایگان «بررسی رویت‌پذیری برند در ChatGPT» (ورودی PLG)</div>
+    <div class="arr">←</div>
+    <div class="step"><b>۲</b>ثبت‌نام و دریافت اولین گزارش فارسی با شکاف‌های مشخص</div>
+    <div class="arr">←</div>
+    <div class="step"><b>۳</b>ارائه گزارش به مشتری آژانس → فشار تقاضا</div>
+    <div class="arr">←</div>
+    <div class="step"><b>۴</b>ارتقا به پلن حرفه‌ای/آژانسی با پرداخت تومانی (درگاه داخلی)</div>
+    <div class="arr">←</div>
+    <div class="step"><b>۵</b>گزارش وایت‌لیبل + تمدید سالانه (تخفیف ۲ ماه رایگان طبق عرف بازار <span class="ref">[[78]]</span>)</div>
+  </div>
+
+  <div class="callout">
+    <b>چرا آژانس‌ها پیش از برندها؟</b> داده‌های بازار ایران نشان می‌دهد کسب‌وکارهای کوچک و متوسط به‌جای خرید ابزار، «خدمات متخصصان سئو» را ترجیح می‌دهند <span class="ref">[[123]]</span>؛ بنابراین آژانس/فریلنسر، <b>توزیع‌کننده طبیعی</b> ابزار به هزاران کسب‌وکار نهایی است. فروش مستقیم به هر SME غیرمقرون‌به‌صرفه است، اما یک آژانس با ۲۰ مشتری، ۲۰ کسب‌وکار را با خود وارد پلتفرم می‌کند.
   </div>
 </section>
 
+<!-- ============ 6. SIZING ============ -->
 <section class="page" id="sizing">
-  <h2>۷. تحلیل بازار کل قابل دسترسی (TAM)، بازار قابل خدمت‌دهی (SAM) و بازار قابل کسب (SOM)</h2>
-  <p>اندازه‌گیری بازار متکی بر گزارش‌های صنعتی راستی‌آزمایی‌شده و اقتصاد آژانس‌ها به روش پایین‌به‌بالا است و از خلط کردن کل هزینه تبلیغات دیجیتال با TAM نرم‌افزار پرهیز می‌کند.</p>
+  <h2>۶. محاسبه TAM / SAM / SOM — فقط بازار ایران (تومان)</h2>
+  <p>هر سه سنجه <strong>پایین‌به‌بالا</strong> و از داده‌های ایرانی ساخته شده‌اند. ارقام جهانی صرفاً زمینه هستند و در محاسبه وارد نشده‌اند.</p>
 
+  <div class="chartbox">
+    <svg viewBox="0 0 720 440" role="img" aria-label="قیف بازار ایران">
+      <defs>
+        <linearGradient id="g1" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#1e3a8a"/><stop offset="100%" stop-color="#2d4ea8"/></linearGradient>
+        <linearGradient id="g2" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#3b5bb5"/><stop offset="100%" stop-color="#5a7bd0"/></linearGradient>
+        <linearGradient id="g3" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#b45309"/><stop offset="100%" stop-color="#d97706"/></linearGradient>
+      </defs>
+      <polygon points="40,30 680,30 590,125 130,125" fill="url(#g1)"/>
+      <text x="360" y="68" text-anchor="middle" fill="#fff" font-size="15" font-weight="bold">TAM — بازار نرم‌افزار سئو + ابزارهای رویت‌پذیری AI ایران (۱۴۰۵)</text>
+      <text x="360" y="100" text-anchor="middle" fill="#e0e7ff" font-size="14">۱۱۵ تا ۱۳۵ میلیارد تومان در سال (پایه: ۱۲۵)</text>
+
+      <polygon points="130,140 590,140 505,235 215,235" fill="url(#g2)"/>
+      <text x="360" y="178" text-anchor="middle" fill="#fff" font-size="15" font-weight="bold">SAM — بخش پرمیوم قابل خدمت‌دهی اوژن</text>
+      <text x="360" y="210" text-anchor="middle" fill="#e0e7ff" font-size="14">۴۵ تا ۶۰ میلیارد تومان در سال (پایه: ۵۰)</text>
+
+      <polygon points="215,250 505,250 445,345 275,345" fill="url(#g3)"/>
+      <text x="360" y="288" text-anchor="middle" fill="#fff" font-size="15" font-weight="bold">SOM سه‌ساله (ARR)</text>
+      <text x="360" y="320" text-anchor="middle" fill="#fef3c7" font-size="14">پایه: ۹ میلیارد تومان (۳٫۸ – ۱۸)</text>
+
+      <rect x="185" y="362" width="350" height="56" rx="10" fill="#fffbeb" stroke="#b45309" stroke-width="2" stroke-dasharray="6 4"/>
+      <text x="360" y="386" text-anchor="middle" fill="#92400e" font-size="14" font-weight="bold">SOM پنج‌ساله (ARR)</text>
+      <text x="360" y="408" text-anchor="middle" fill="#92400e" font-size="13">پایه: ۳۰ میلیارد تومان (دامنه ۱۲ – ۶۰)</text>
+    </svg>
+    <div class="cap">شکل ۲ — قیف بازار ایران (تمام ارقام سالانه، به تومان — مدل‌سازی‌شده بر پایه داده‌های اندازه‌گیری‌شده جدول‌های زیر)</div>
+  </div>
+
+  <h3>۶-۱. TAM — محاسبه گام‌به‌گام</h3>
   <table>
-    <thead>
-      <tr>
-        <th>شاخص</th>
-        <th>برآورد (۲۰۲۶)</th>
-        <th>روش‌شناسی و منابع</th>
-      </tr>
-    </thead>
+    <thead><tr><th>جزء</th><th>مقدار</th><th>نوع داده</th><th>منبع / فرمول</th></tr></thead>
     <tbody>
-      <tr>
-        <td><strong>TAM</strong><br>(بازار کل قابل دسترسی)</td>
-        <td><strong>۸۷٫۲۲ میلیارد دلار</strong></td>
-        <td>بازار جهانی نرم‌افزار سئو (۸۵٫۹۷ میلیارد دلار) <span class="ref">[[22]]</span> + بازار جهانی خدمات GEO (۱٫۲۵ میلیارد دلار) <span class="ref">[[7]]</span>. نمایانگر کل هزینه نظری روی ابزارها و خدمات بهینه‌سازی رویت‌پذیری جست‌وجو/AI در سطح جهان.</td>
-      </tr>
-      <tr>
-        <td><strong>SAM</strong><br>(بازار قابل خدمت‌دهی)</td>
-        <td><strong>۱۲٫۴۸ میلیارد دلار</strong></td>
-        <td>بازار بازاریابی/آژانس منا (۸٫۱۸ میلیارد دلار) <span class="ref">[[30]]</span> + تقاضای جهانی نرم‌افزار سئوی دوزبانه/چندزبانه (برآورد ۵٪ از TAM جهانی = ۴٫۳ میلیارد دلار). نمایانگر بازاری که اوژن با توجه به پشتیبانی زبانی و تمرکز منطقه‌ای فعلی واقعاً می‌تواند به آن خدمت دهد.</td>
-      </tr>
-      <tr>
-        <td><strong>SOM</strong><br>(بازار قابل کسب)</td>
-        <td><strong>۶٫۰ میلیون دلار ARR</strong><br>(هدف ۳ ساله)</td>
-        <td><strong>محاسبه پایین‌به‌بالا:</strong> کسب ۱۵۰۰ فضای کاری آژانسی بازار میانی طی ۳۶ ماه. میانگین ارزش قرارداد سالانه (ACV) برابر ۴۰۰۰ دلار (معادل تقریباً ۳۳۳ دلار در ماه به ازای هر فضای کاری با مدیریت ۵ تا ۱۰ دامنه مشتری). فرض: نفوذ ۵٪ در بخش آژانس‌های قابل دسترسی منا/دیاسپورا.</td>
-      </tr>
+      <tr><td>کل صنعت سئو ایران (خدمات + ابزار + فعالیت‌های مرتبط)</td><td><span class="num">۷۰۰–۹۰۰</span> میلیارد تومان/سال</td><td><span class="badge b-measured">گزارش‌شده</span></td><td>تکراسا اینسایت، گزارش تکنولوژی بازاریابی ایران ۱۴۰۳ (بهمن ۱۴۰۳) <span class="ref">[[123]]</span> — <strong>فقط زمینه؛ TAM اوژن نیست</strong> (خدمات قابل تصرف نرم‌افزار نیستند)</td></tr>
+      <tr><td>بازار ابزارهای سئو — سال ۱۴۰۲</td><td><span class="num">۳۵–۴۵</span> میلیارد تومان</td><td><span class="badge b-measured">برآورد منبع</span></td><td>همان منبع <span class="ref">[[123]]</span></td></tr>
+      <tr><td>نرخ رشد سالانه بازار ابزار</td><td>۴۰–۵۰٪</td><td><span class="badge b-measured">گزارش‌شده</span></td><td>همان منبع <span class="ref">[[123]]</span></td></tr>
+      <tr><td>تصویر ۱۴۰۵ بازار ابزار</td><td><span class="num">۱۰۵–۱۲۵</span> میلیارد تومان</td><td><span class="badge b-modeled">مدل</span></td><td>فرمول: ۳۵×(۱٫۴۵)³ ≈ ۱۰۶ و ۴۵×(۱٫۴۰)³ ≈ ۱۲۳ (بخش تورمی است — به دلار ثابت کوچک‌تر می‌شود)</td></tr>
+      <tr><td>+ دسته جدید نرم‌افزار رویت‌پذیری AI/GEO (۱۴۰۵)</td><td><span class="num">۱۰–۱۲</span> میلیارد تومان</td><td><span class="badge b-modeled">مدل</span></td><td>فرض شفاف: ~۱۰٪ بازار ابزار (قیاس با الگوی جهانی شکل‌گیری دسته GEO)؛ بدون منبع اندازه‌گیری‌شده داخلی — <strong>کم‌اطمینان‌ترین عدد مدل</strong></td></tr>
+      <tr style="background:#eff6ff"><td><strong>TAM نرم‌افزاری اوژن (۱۴۰۵)</strong></td><td><strong><span class="num">۱۱۵–۱۳۵</span> میلیارد تومان (پایه ۱۲۵)</strong></td><td><span class="badge b-modeled">مدل</span></td><td>جمع دو جزء بالا، بدون هم‌پوشانی</td></tr>
     </tbody>
   </table>
 
-  <h3>تحلیل حساسیت: سناریوهای SOM (سال سوم)</h3>
-  <div class="grid g-3">
-    <div class="card"><h4>محافظه‌کارانه</h4><p><strong>۲٫۴ میلیون دلار ARR</strong><br>۶۰۰ فضای کاری × ACV ۴۰۰۰ دلار. چرخش بالا به دلیل نبود قابلیت‌های وایت‌لیبل؛ چرخه‌های فروش کند در منا.</p></div>
-    <div class="card highlight"><h4>سناریوی پایه</h4><p><strong>۶٫۰ میلیون دلار ARR</strong><br>۱۵۰۰ فضای کاری × ACV ۴۰۰۰ دلار. تناسب قوی محصول-بازار در ردیابی دوزبانه؛ استقرار موفق آژانس‌ها.</p></div>
-    <div class="card"><h4>خوش‌بینانه</h4><p><strong>۱۲٫۵ میلیون دلار ARR</strong><br>۲۵۰۰ فضای کاری × ACV ۵۰۰۰ دلار. توسعه به حساب‌های سازمانی جهانی از طریق استراتژی اسب تروآی دیاسپورا.</p></div>
+  <h3>۶-۲. SAM — بخش پرمیوم قابل خدمت‌دهی</h3>
+  <table>
+    <thead><tr><th>گام</th><th>مقدار</th><th>روش استنتاج</th></tr></thead>
+    <tbody>
+      <tr><td>مشترکان پرداخت‌کننده فعلی ابزار سئو در ایران</td><td><span class="num">۶٬۰۰۰–۸٬۰۰۰</span></td><td><span class="badge b-modeled">استنتاج</span> بازار ۱۴۰۲ (≈۴۰ میلیارد) ÷ میانگین اشتراک سالانه ۵–۷ میلیون تومان (لنگر: پلن‌های سالانه میزفا ۶٫۵ و ۱۹٫۵ میلیون <span class="ref">[[78]]</span> و ابزارهای ورودی ۳۷۰–۶۵۰ هزار تومان/ماه <span class="ref">[[47]]</span>)</td></tr>
+      <tr><td>حساب‌های پرمیوم هدف اوژن (آژانس‌ها + ای‌کامرس متوسط/بزرگ + ناشران + فناوری)</td><td><span class="num">۴٬۰۰۰–۵٬۰۰۰</span></td><td><span class="badge b-modeled">مدل</span> بخش ۴ (جمع ۸–۱۱ هزار، کسر هم‌پوشانی و کسر بخش کم‌بودجه) — همخوان با ~۴۰–۵۰٪ ارزش بازار ابزار</td></tr>
+      <tr><td>میانگین درآمد سالانه قابل وصول به ازای حساب (ARPU)</td><td><span class="num">۱۲–۱۵</span> میلیون تومان</td><td><span class="badge b-prop">پیشنهادی</span> مبتنی بر قیمت‌های پیشنهادی بخش ۷ با ترکیب پلن‌ها (وزن بیشتر پلن حرفه‌ای)</td></tr>
+      <tr style="background:#eff6ff"><td><strong>SAM</strong></td><td><strong><span class="num">۴۵–۶۰</span> میلیارد تومان/سال (پایه ۵۰)</strong></td><td>فرمول: ۴٬۰۰۰×۱۲ ≈ ۴۸ و ۵٬۰۰۰×۱۵ = ۷۵ → دامنه محافظه‌کارانه ۴۵–۶۰ پس از کسر ضریب واقع‌گرایی پذیرش محصول جدید</td></tr>
+    </tbody>
+  </table>
+
+  <h3>۶-۳. SOM — ساخت پایین‌به‌بالا از فرض‌های جذب (نه درصد دلخواه از TAM)</h3>
+  <table>
+    <thead><tr><th>افق</th><th>محافظه‌کارانه</th><th>پایه</th><th>خوش‌بینانه</th><th>فرض‌های جذب مشتری</th></tr></thead>
+    <tbody>
+      <tr>
+        <td><strong>سال سوم (ARR)</strong></td>
+        <td><span class="num">۲۵۰</span> حساب × ۱۵M = <strong><span class="num">۳٫۸</span> میلیارد</strong></td>
+        <td><span class="num">۵۰۰</span> × ۱۸M = <strong><span class="num">۹</span> میلیارد</strong></td>
+        <td><span class="num">۹۰۰</span> × ۲۰M = <strong><span class="num">۱۸</span> میلیارد</strong></td>
+        <td>میانگین ۷–۲۵ مشتری پرداختی جدید در ماه؛ نرخ تبدیل رایگان→پولی ۲–۴٪ (PLG)؛ ریزش ماهانه &lt;۴٪؛ بدون بودجه تبلیغات سنگین</td>
+      </tr>
+      <tr>
+        <td><strong>سال پنجم (ARR)</strong></td>
+        <td><span class="num">۶۰۰</span> × ۲۰M = <strong><span class="num">۱۲</span> میلیارد</strong></td>
+        <td><span class="num">۱٬۲۰۰</span> × ۲۵M = <strong><span class="num">۳۰</span> میلیارد</strong></td>
+        <td><span class="num">۲٬۰۰۰</span> × ۳۰M = <strong><span class="num">۶۰</span> میلیارد</strong></td>
+        <td>~۲۸–۴۲ مشتری جدید در ماه؛ کانال آژانسی + وایت‌لیبل فعال؛ تعدیل قیمت سالانه همگام با تورم</td>
+      </tr>
+    </tbody>
+  </table>
+  <ul class="muted">
+    <li><strong>سنجه واقع‌بینی:</strong> سناریوی پایه سال سوم ≈ ۱۸٪ از SAM پایه است — برای تازه‌واردِ نخستین در یک دسته جدید منطقی است؛ سناریوی پایه سال پنجم (≈۶۰٪ SAM) <strong>خوش‌بینانه تهاجمی</strong> است و تنها در صورت رهبری قطعی دسته و تعدیل قیمت با تورم محقق می‌شود.</li>
+    <li><strong>لنگر مقایسه‌ای:</strong> میزفا تولز (جامع‌ترین ابزار داخلی) ادعای ۴۱٬۵۶۰ کاربر ثبت‌شده دارد <span class="ref">[[78]]</span> (عدد خودگزارش، شامل رایگان/آزمایشی — <span class="badge b-low">اطمینان پایین</span>)؛ حتی با نرخ پرداخت ۱۰–۱۵٪، جذب ۵۰۰ حساب پرداختی premium برای اوژن در ۳ سال دست‌یافتنی ارزیابی می‌شود.</li>
+    <li><strong>تفکیک بازار از درآمد شرکت:</strong> TAM/SAM «خرج بازار» است؛ SOM «درآمد اوژن» — این دو هرگز یکسان فرض نشده‌اند.</li>
+  </ul>
+</section>
+
+<!-- ============ 7. PRICING ============ -->
+<section class="page" id="pricing">
+  <h2>۷. قیمت‌گذاری و تمایل به پرداخت در ایران</h2>
+
+  <h3>۷-۱. شواهد قیمت منتشرشده بازار (لنگرهای قیمت‌گذاری)</h3>
+  <table>
+    <thead><tr><th>محصول/خدمت</th><th>قیمت منتشرشده</th><th>وضعیت</th><th>منبع</th></tr></thead>
+    <tbody>
+      <tr><td>میزفا تولز — طرح استاندارد (۲۵ دامنه)</td><td><span class="num">۶۵۰٬۰۰۰</span> تومان/ماه؛ سالانه <span class="num">۶٬۵۰۰٬۰۰۰</span> (۲ ماه رایگان)</td><td><span class="badge b-pub">منتشرشده</span></td><td>صفحه قیمت رسمی، دسترسی مهر ۱۴۰۵ <span class="ref">[[78]]</span></td></tr>
+      <tr><td>میزفا تولز — طرح حرفه‌ای (۸۰ دامنه)</td><td><span class="num">۱٬۹۵۰٬۰۰۰</span> تومان/ماه؛ سالانه <span class="num">۱۹٬۵۰۱٬۰۰۰</span></td><td><span class="badge b-pub">منتشرشده</span></td><td>همان <span class="ref">[[78]]</span></td></tr>
+      <tr><td>ابزارهای ایرانی ورودی (آریا سئو، جت‌سئو، سئو سیگنال، کیوردچی)</td><td>شروع <span class="num">۳۷۰٬۰۰۰–۶۵۰٬۰۰۰</span> تومان/ماه</td><td><span class="badge b-pub">منتشرشده</span></td><td>مقایسه ۱۴۰۵ <span class="ref">[[47]][[115]]</span></td></tr>
+      <tr><td>خدمات سئوی ماهانه — کسب‌وکار کوچک/متوسط</td><td><span class="num">۱۵–۶۵</span> میلیون تومان/ماه</td><td><span class="badge b-pub">منتشرشده</span></td><td>عرف بازار ۱۴۰۵ <span class="ref">[[30]]</span></td></tr>
+      <tr><td>خدمات سئو — آژانس‌های بالاشهری (نردبان، سئودو)</td><td>شروع <span class="num">۳۵</span> میلیون تومان/ماه</td><td><span class="badge b-pub">منتشرشده</span></td><td><span class="ref">[[29]][[118]]</span></td></tr>
+      <tr><td>خدمات سئو — بسته اقتصادی (تابان‌شهر)</td><td><span class="num">۸–۱۸</span> میلیون تومان/ماه</td><td><span class="badge b-pub">منتشرشده</span></td><td><span class="ref">[[36]][[116]]</span></td></tr>
+      <tr><td>مشاوره سئو (پنتازوم)</td><td><span class="num">۹٬۵۰۰٬۰۰۰</span> تومان/جلسه بسته</td><td><span class="badge b-pub">منتشرشده</span></td><td><span class="ref">[[35]]</span></td></tr>
+    </tbody>
+  </table>
+  <p class="muted"><strong>استنتاج کلیدی:</strong> سقف قیمت «ابزار» در ایران امروز ~۲ میلیون تومان/ماه است، اما سقف «بودجه سئوی» کسب‌وکارها ۱۰ تا ۳۰ برابر بالاتر است <span class="ref">[[30]][[78]]</span>. اوژن باید خود را <strong>جایگزین بخشی از بودجه خدمت</strong> (سرویس گزارش‌دهی AI) قیمت‌گذاری کند، نه رقیب ابزار ۶۵۰ هزار تومانی.</p>
+
+  <h3>۷-۲. ساختار قیمت پیشنهادی اوژن <span class="badge b-prop">پیشنهادی — اعتبارسنجی‌نشده</span></h3>
+  <table>
+    <thead><tr><th>پلن</th><th>قیمت پیشنهادی (تومان/ماه)</th><th>محتوا</th><th>منطق لنگر</th></tr></thead>
+    <tbody>
+      <tr><td><strong>رایگان</strong></td><td>۰</td><td>۱ برند، ۱۰ پرامپت فارسی/انگلیسی، گزارش ماهانه رویت‌پذیری AI</td><td>موتور جذب PLG؛ هزینه LLM با سقف سخت کنترل شود</td></tr>
+      <tr><td><strong>حرفه‌ای</strong></td><td><span class="num">۱٬۹۰۰٬۰۰۰</span></td><td>۱ برند، ۵۰ پرامپت، پایش هفتگی، استنادیابی، سئوی فنی پایه</td><td>هم‌تراز میزفا حرفه‌ای (۱٬۹۵۰٬۰۰۰) <span class="ref">[[78]]</span> — آشنایی قیمتی برای خریدار</td></tr>
+      <tr><td><strong>آژانسی</strong> <span class="badge b-tier1">هسته درآمد</span></td><td><span class="num">۴٬۹۰۰٬۰۰۰</span></td><td>۵ فضای کاری مشتری، گزارش وایت‌لیبل، پایش روزانه، API</td><td>کمتر از یک‌سوم رتینر ۱۵–۳۵ میلیونی آژانس <span class="ref">[[30]][[29]]</span> → ROI بدیهی</td></tr>
+      <tr><td><strong>سازمانی</strong></td><td>از <span class="num">۱۲٬۰۰۰٬۰۰۰</span></td><td>فضای نامحدود، SSO، پشتیبانی اختصاصی، SLA</td><td>زیر تعرفه خدمات سازمانی؛ با فاکتور رسمی و قرارداد</td></tr>
+    </tbody>
+  </table>
+  <ul class="muted">
+    <li>پرداخت سالانه با ۲ ماه رایگان (عرف بازار — میزفا <span class="ref">[[78]]</span>)؛ تجدیدنظر قیمت هر ۶–۱۲ ماه به دلیل تورم.</li>
+    <li>هزینه متغیر اصلی: فراخوانی LLM — پلن رایگان باید سهمیه‌بندی سخت داشته باشد؛ حاشیه ناخالص هدف ≥۷۰٪ با فرض هزینه API دلاری و درآمد تومانی (ریسک نرخ ارز — بخش ۱۱).</li>
+    <li><strong>هیچ‌کدام از این قیمت‌ها با مشتری ایرانی اعتبارسنجی نشده‌اند</strong>؛ تمایل به پرداخت واقعی باید با ۲۰ مصاحبه + ۳ ماه پایلوت قبل از قیمت‌گذاری عمومی تأیید شود.</li>
+  </ul>
+</section>
+
+<!-- ============ 8. COMPETITION ============ -->
+<section class="page" id="competition">
+  <h2>۸. رقبا و جایگزین‌ها در ایران</h2>
+  <p>طبق گزارش تکراسا، <strong>۳۰ ارائه‌دهنده ابزار سئو</strong> (داخلی و خارجی) در ایران فعال‌اند و <strong>۱۱ ابزار خارجی</strong> علیرغم تحریم از مسیر «فروشندگان اکانت اشتراکی» در دسترس‌اند <span class="ref">[[123]]</span>. رقابت در سئوی سنتی شدید است؛ اما در دسته «رویت‌پذیری AI» خلأ مستند وجود دارد.</p>
+
+  <table>
+    <thead><tr><th>رقیب/جایگزین</th><th>نوع</th><th>قیمت</th><th>رویت‌پذیری AI؟</th><th>نقطه ضعف در برابر اوژن</th></tr></thead>
+    <tbody>
+      <tr><td><strong>میزفا تولز</strong> <span class="ref">[[78]][[117]]</span></td><td>پلتفرم جامع سئو داخلی (۸ ابزار در ۱) + افزودنی AI کیف‌پولی</td><td><span class="num">۶۵۰K / ۱٫۹۵M</span> تومان/ماه</td><td>خیر — AI فقط برای تحلیل محتوا/کلمات</td><td>بدون پایش برند در پاسخ‌های LLM، بدون چندفضای‌کاری آژانسی با RLS</td></tr>
+      <tr><td><strong>جت‌سئو</strong> <span class="ref">[[40]][[123]]</span></td><td>ابزار جامع نیمه‌رایگان؛ «چالشگر اصلی بازار» به روایت تکراسا</td><td>نیمه‌رایگان/اشتراکی</td><td>خیر</td><td>تمرکز بر ابزارک‌های سئو؛ فاقد لایه هوش/پایش AI</td></tr>
+      <tr><td><strong>آریا سئو، سئو سیگنال، کیوردچی، KWRank</strong> <span class="ref">[[47]][[48]]</span></td><td>ابزارک‌های کلمه کلیدی/رتبه</td><td>ورودی <span class="num">۳۷۰–۶۵۰K</span> تومان/ماه؛ پنل‌های خرد از <span class="num">۴۵K</span> (قیمت قدیمی ۱۴۰۰)</td><td>خیر</td><td>تک‌کارکردی؛ بدون داشبورد یکپارچه</td></tr>
+      <tr><td><strong>دیجی‌مارک</strong> <span class="ref">[[95]]</span></td><td>«اولین ابزار سئو با هوش مصنوعی در ایران» — بهینه‌سازی محتوا</td><td>اشتراکی</td><td>جزئی — تولید محتوا، نه پایش پاسخ موتورهای AI</td><td>تمایز اوژن: اندازه‌گیری حضور برند در ChatGPT/Gemini، نه تولید محتوا</td></tr>
+      <tr><td><strong>نوین مارکتینگ (خدمات AEO/GEO)</strong> <span class="ref">[[92]]</span></td><td>آژانس — فروش خدمات انسانی سئوی هوش مصنوعی</td><td>پروژه‌ای (اعلام عمومی نشده)</td><td>بله — اما به‌صورت خدمت انسانی، بدون پلتفرم خودکار</td><td>مقیاس‌ناپذیر و گران؛ اوژن مکمل/جایگزین نرم‌افزاری آن است</td></tr>
+      <tr><td><strong>اکانت‌های اشتراکی Semrush/Ahrefs/Moz</strong> <span class="ref">[[123]]</span></td><td>واسطه‌های فروش اکانت خارجی با ~یک‌دهم قیمت</td><td>متغیر</td><td>خیر (ماژول‌های AI خارجی، فارسی‌پشتیبان ضعیف)</td><td>دقت پایین در فارسی — معیار اول انتخاب ابزار در ایران «دقت در زبان فارسی» است <span class="ref">[[123]]</span></td></tr>
+      <tr><td><strong>فرایندهای داخلی/اکسل + ChatGPT دستی</strong></td><td>جایگزین غیرنرم‌افزاری</td><td>هزینه نیروی انسانی</td><td>دستی و بی‌تکرار</td><td>اوژن همان خروجی را خودکار، تاریخی و قابل گزارش می‌کند</td></tr>
+      <tr><td><strong>پلتفرم اختصاصی «پایش برند در AI» داخلی</strong></td><td>—</td><td>—</td><td colspan="2"><strong>در جست‌وجوی منابع عمومی یافت نشد</strong> (مهر ۱۴۰۵) <span class="badge b-mid">اطمینان متوسط</span> — نزدیک‌ترین‌ها: آموزش/مشاوره GEO (محسن طاووسی <span class="ref">[[87]]</span>) و دسترسی‌فروش AI (GapGPT <span class="ref">[[135]]</span>)</td></tr>
+    </tbody>
+  </table>
+
+  <div class="chartbox">
+    <svg viewBox="0 0 760 500" role="img" aria-label="نقشه جایگاه‌یابی رقبا">
+      <!-- axes -->
+      <line x1="90" y1="430" x2="710" y2="430" stroke="#94a3b8" stroke-width="1.5"/>
+      <line x1="400" y1="60" x2="400" y2="430" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4 4"/>
+      <line x1="90" y1="245" x2="710" y2="245" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4 4"/>
+      <text x="710" y="458" text-anchor="end" font-size="11" fill="#64748b">تمرکز بر رویت‌پذیری هوش مصنوعی (GEO/AEO) →</text>
+      <text x="90" y="458" font-size="11" fill="#64748b">← تمرکز بر سئوی سنتی</text>
+      <text x="78" y="70" font-size="11" fill="#64748b" transform="rotate(-90 78 70)" text-anchor="end">قیمت/عمق ↑</text>
+      <!-- quadrant label -->
+      <rect x="430" y="80" width="260" height="120" rx="12" fill="#fffbeb" stroke="#b45309" stroke-dasharray="7 5" stroke-width="1.5"/>
+      <text x="560" y="105" text-anchor="middle" font-size="12" fill="#b45309" font-weight="bold">فضای خالی بازار ایران</text>
+      <text x="560" y="128" text-anchor="middle" font-size="11" fill="#92400e">پلتفرم پرمیوم رویت‌پذیری AI</text>
+      <text x="560" y="148" text-anchor="middle" font-size="11" fill="#92400e">فارسی‌اول + چندفضای‌کاری آژانسی</text>
+      <text x="560" y="172" text-anchor="middle" font-size="10" fill="#92400e">(هیچ بازیگر داخلی شناسایی نشد)</text>
+      <!-- points -->
+      <g font-size="11">
+        <circle cx="183" cy="337" r="9" fill="#94a3b8"/><text x="183" y="362" text-anchor="middle" fill="#475569">اکانت اشتراکی خارجی</text>
+        <circle cx="245" cy="319" r="9" fill="#94a3b8"/><text x="245" y="300" text-anchor="middle" fill="#475569">کیوردچی/آریا/سئوسیگنال</text>
+        <circle cx="330" cy="290" r="11" fill="#64748b"/><text x="330" y="270" text-anchor="middle" fill="#334155">جت‌سئو</text>
+        <circle cx="350" cy="227" r="12" fill="#2d4ea8"/><text x="350" y="207" text-anchor="middle" fill="#1e3a8a" font-weight="bold">میزفا تولز</text>
+        <circle cx="431" cy="264" r="10" fill="#4a69c0"/><text x="431" y="288" text-anchor="middle" fill="#334155">دیجی‌مارک (AI محتوا)</text>
+        <circle cx="536" cy="171" r="10" fill="#b45309"/><text x="536" y="151" text-anchor="middle" fill="#92400e">خدمات AEO/GEO نوین (انسانی)</text>
+        <circle cx="629" cy="104" r="15" fill="#b45309" stroke="#fff" stroke-width="3"/>
+        <text x="629" y="76" text-anchor="middle" fill="#b45309" font-weight="bold" font-size="13">اوژن</text>
+      </g>
+    </svg>
+    <div class="cap">شکل ۳ — نقشه جایگاه‌یابی: اوژن در ربع «پرمیوم × رویت‌پذیری AI» بدون رقیب داخلی شناسایی‌شده قرار می‌گیرد (جای‌گذاری نقاط، تحلیلی و کیفی است)</div>
+  </div>
+
+  <div class="callout">
+    <b>نتیجه رقابتی:</b> اوژن نباید در جنگ قیمتی ابزارهای ۳۷۰–۶۵۰ هزار تومانی یا جنگ داده‌ای با اکانت‌های اشتراکی Semrush وارد شود <span class="ref">[[123]]</span>. استراتژی صحیح: <b>ایجاد دسته جدید «رویت‌پذیری AI فارسی»</b> با قابلیت‌هایی که هیچ ابزار داخلی ندارد (پایش پرامپت فارسی، استنادیابی به منابع فارسی، فضای کاری چندمشتری با ایزوله‌سازی، گزارش وایت‌لیبل) و فروش آن به آژانس‌هایی که خودشان ابزار سنتی دارند.
   </div>
 </section>
 
-<section class="page" id="competition">
-  <h2>۸. چشم‌انداز رقابتی و تمایز</h2>
-  <p>بازار GEO/رویت‌پذیری AI نوظهور اما به‌سرعت در حال تحکیم است. اوژن باید از جنگ مستقیم قابلیت‌به‌قابلیت با شرکت‌های غربیِ پُرسرمایه بپرهیزد و به‌جای آن نقاط کور ساختاری آن‌ها را هدف گیرد.</p>
+<!-- ============ 9. SCENARIOS ============ -->
+<section class="page" id="scenarios">
+  <h2>۹. سناریوهای مالی، حساسیت و اقتصاد واحد</h2>
+
+  <div class="chartbox">
+    <svg viewBox="0 0 760 330" role="img" aria-label="نمودار سناریوهای SOM">
+      <line x1="60" y1="270" x2="720" y2="270" stroke="#94a3b8" stroke-width="1.5"/>
+      <line x1="60" y1="270" x2="60" y2="20" stroke="#94a3b8" stroke-width="1.5"/>
+      <g font-size="10" fill="#64748b">
+        <text x="52" y="274" text-anchor="end">۰</text>
+        <line x1="60" y1="197" x2="720" y2="197" stroke="#f1f5f9"/><text x="52" y="201" text-anchor="end">۲۰</text>
+        <line x1="60" y1="123" x2="720" y2="123" stroke="#f1f5f9"/><text x="52" y="127" text-anchor="end">۴۰</text>
+        <line x1="60" y1="50" x2="720" y2="50" stroke="#f1f5f9"/><text x="52" y="54" text-anchor="end">۶۰</text>
+        <text x="26" y="150" transform="rotate(-90 26 150)" text-anchor="middle">میلیارد تومان ARR</text>
+      </g>
+      <!-- Year 3 group -->
+      <g>
+        <rect x="110" y="256" width="52" height="14" rx="3" fill="#94a3b8"/><text x="136" y="248" text-anchor="middle" font-size="11" fill="#475569">۳٫۸</text>
+        <rect x="172" y="237" width="52" height="33" rx="3" fill="#1e3a8a"/><text x="198" y="229" text-anchor="middle" font-size="11" fill="#1e3a8a" font-weight="bold">۹</text>
+        <rect x="234" y="204" width="52" height="66" rx="3" fill="#b45309"/><text x="260" y="196" text-anchor="middle" font-size="11" fill="#b45309">۱۸</text>
+        <text x="198" y="295" text-anchor="middle" font-size="12" fill="#0f172a" font-weight="bold">سال سوم</text>
+      </g>
+      <!-- Year 5 group -->
+      <g>
+        <rect x="430" y="226" width="52" height="44" rx="3" fill="#94a3b8"/><text x="456" y="218" text-anchor="middle" font-size="11" fill="#475569">۱۲</text>
+        <rect x="492" y="160" width="52" height="110" rx="3" fill="#1e3a8a"/><text x="518" y="152" text-anchor="middle" font-size="11" fill="#1e3a8a" font-weight="bold">۳۰</text>
+        <rect x="554" y="50" width="52" height="220" rx="3" fill="#b45309"/><text x="580" y="42" text-anchor="middle" font-size="11" fill="#b45309">۶۰</text>
+        <text x="518" y="295" text-anchor="middle" font-size="12" fill="#0f172a" font-weight="bold">سال پنجم</text>
+      </g>
+      <g font-size="10">
+        <rect x="620" y="60" width="12" height="12" rx="2" fill="#94a3b8"/><text x="638" y="70" fill="#475569">محافظه‌کارانه</text>
+        <rect x="620" y="82" width="12" height="12" rx="2" fill="#1e3a8a"/><text x="638" y="92" fill="#475569">پایه</text>
+        <rect x="620" y="104" width="12" height="12" rx="2" fill="#b45309"/><text x="638" y="114" fill="#475569">خوش‌بینانه</text>
+      </g>
+    </svg>
+    <div class="cap">شکل ۴ — سناریوهای درآمد تکرارشونده سالانه (SOM) اوژن در ایران، به میلیارد تومان (مدل‌سازی‌شده از فرض‌های جذب بخش ۶-۳)</div>
+  </div>
+
+  <h3>۹-۱. تحلیل حساسیت (سناریوی پایه سال سوم: ۹ میلیارد تومان)</h3>
+  <table>
+    <thead><tr><th>متغیر</th><th>تغییر</th><th>اثر بر ARR سال سوم</th></tr></thead>
+    <tbody>
+      <tr><td>تعداد حساب‌های پرداختی</td><td>−۳۰٪ / +۳۰٪</td><td><span class="num">۶٫۳</span> / <span class="num">۱۱٫۷</span> میلیارد تومان</td></tr>
+      <tr><td>ARPU ترکیبی</td><td>−۲۵٪ / +۲۵٪</td><td><span class="num">۶٫۸</span> / <span class="num">۱۱٫۳</span> میلیارد تومان</td></tr>
+      <tr><td>ریزش ماهانه</td><td>از ۴٪ به ۷٪</td><td>≈ <span class="num">۶٫۵</span> میلیارد تومان (حساب خالص انباشته ~۲۸٪ کاهش)</td></tr>
+      <tr><td>تعدیل تورمی قیمت (سالانه)</td><td>+۳۰٪</td><td>جبران نسبی ریزش/تخفیف — دلیل تفاوت SOM تومانی و دلاری</td></tr>
+    </tbody>
+  </table>
+
+  <h3>۹-۲. اقتصاد واحد (برآورد اولیه، برچسب‌دار)</h3>
+  <ul class="muted">
+    <li><strong>ACV پایه:</strong> ~۱۸ میلیون تومان (پلن حرفه‌ای ۱٫۹M × ۱۲ با احتساب ترکیب پلن‌ها و تخفیف سالانه)</li>
+    <li><strong>CAC هدف (کانال PLG + گزارش داخلی):</strong> ۳–۶ میلیون تومان → بازگشت &lt; ۶ ماه</li>
+    <li><strong>حاشیه ناخالص هدف:</strong> ≥۷۰٪ — ریسک اصلی: هزینه دلاری API هوش مصنوعی در برابر درآمد تومانی (پوشش: سهمیه‌بندی، کش، مدل‌های داخلی/واسطه — بخش ۱۱)</li>
+    <li><strong>نقطه سربه‌سر عملیاتی ایران:</strong> با تیم ۴–۶ نفره و هزینه‌های ریالی، تقریباً <span class="num">۳۵۰–۴۵۰</span> حساب فعال — یعنی سناریوی پایه سال سوم مرز سربه‌سری است (شفاف برای سرمایه‌گذار)</li>
+  </ul>
+</section>
+
+<!-- ============ 10. GTM ============ -->
+<section class="page" id="gtm">
+  <h2>۱۰. کانال‌های جذب مشتری و نقشه راه ورود به بازار ایران</h2>
 
   <table>
-    <thead>
-      <tr>
-        <th>رقیب</th>
-        <th>بخش هدف</th>
-        <th>قیمت‌گذاری (راستی‌آزمایی‌شده)</th>
-        <th>ضعف کلیدی / شکاف ورود اوژن</th>
-      </tr>
-    </thead>
+    <thead><tr><th>کانال</th><th>چرا در ایران عملی است</th><th>اولویت</th></tr></thead>
     <tbody>
-      <tr>
-        <td><strong>Profound</strong></td>
-        <td>سازمانی جهانی</td>
-        <td>۴۹۹ دلار در ماه <span class="ref">[[11]]</span></td>
-        <td><strong>فقط انگلیسی، هزینه بالا.</strong> اوژن آژانس‌های بازار میانی را می‌بَرَد که نمی‌توانند سالانه ۶ هزار دلار به ازای هر مشتری صرفاً برای ردیابی انگلیسی بپردازند.</td>
-      </tr>
-      <tr>
-        <td><strong>Otterly.AI</strong></td>
-        <td>SMB / تک‌نفره</td>
-        <td>۲۹ دلار در ماه <span class="ref">[[14]]</span></td>
-        <td><strong>تشخیص سطحی.</strong> موتور سئوی فنی و نگاشت منابع استناد اوژن عمقی ارائه می‌دهد که Otterly فاقد آن است و توجیه‌کننده قیمت ۱۰ برابری برای آژانس‌هاست.</td>
-      </tr>
-      <tr>
-        <td><strong>Peec AI</strong></td>
-        <td>تیم‌های بازاریابی میانی</td>
-        <td>سفارشی / رده میانی <span class="ref">[[11]]</span></td>
-        <td><strong>بدون پشتیبانی RTL.</strong> در ساختار پرامپت‌های فارسی/عربی و تجزیه استنادات کاملاً ناتوان است. اوژن این شکاف را به‌طور کامل در اختیار دارد.</td>
-      </tr>
-      <tr>
-        <td><strong>Semrush / Ahrefs</strong></td>
-        <td>سئوی سنتی</td>
-        <td>۱۲۹ تا ۴۴۹ دلار در ماه</td>
-        <td><strong>تمرکز بر سئوی قدیمی.</strong> رویت‌پذیری AI صرفاً یک افزونه جانبی است. اوژن بومیِ موتورهای پاسخ‌دهی LLM است، نه صرفاً لینک‌های آبی.</td>
-      </tr>
+      <tr><td><strong>ابزار رایگان «بررسی رویت‌پذیری برند در ChatGPT» (PLG)</strong></td><td>پذیرش AI در ایران عام است (۵۷٪؛ ChatGPT ۹۲٪ <span class="ref">[[16]]</span>) اما ابزار سنجش رایگان فارسی وجود ندارد؛ خروجی گزارش = محتوای ویروسی برای آژانس‌ها</td><td><span class="badge b-tier1">۱</span></td></tr>
+      <tr><td><strong>سئوی محتوایی سایت خود اوژن</strong></td><td>تقاضای جست‌وجوی فارسی برای «GEO چیست»، «دیده شدن در چت جی پی تی» اثبات‌شده (محتوای آموزشی موجود رتبه می‌گیرد <span class="ref">[[87]]</span>)؛ هزینه جذب نزدیک صفر</td><td><span class="badge b-tier1">۱</span></td></tr>
+      <tr><td><strong>فروش مستقیم/شراکت با آژانس‌ها + وایت‌لیبل</strong></td><td>آژانس‌ها ۷۰٪ خریداران ابزارند <span class="ref">[[123]]</span>؛ هر آژانس = دروازه ورود به ۵–۳۰ کسب‌وکار</td><td><span class="badge b-tier1">۱</span></td></tr>
+      <tr><td><strong>رپورتاژ آگهی در شبکه ناشران</strong></td><td>بازار فعال: ۲۵۱ هزار رپورتاژ در ۷٬۴۰۰+ سایت با گردش ۴۷۴ میلیارد تومانی <span class="ref">[[16]]</span> — کانال اثبات‌شده B2B در ایران</td><td><span class="badge b-tier2">۲</span></td></tr>
+      <tr><td><strong>لینکدین/اینستاگرام + وبینارهای تخصصی سئو</strong></td><td>جامعه سئوکاران فارسی‌زبان در این کانال‌ها متمرکز است؛ آموزش GEO = بازاریابی دسته‌ساز</td><td><span class="badge b-tier2">۲</span></td></tr>
+      <tr><td><strong>رویدادها و نمایشگاه‌های فناوری/مارتک داخلی</strong></td><td>اعتمادسازی حضوری برای پلن سازمانی</td><td><span class="badge b-tier3">۳</span></td></tr>
+    </tbody>
+  </table>
+
+  <h3>نقشه راه ۱۲ ماهه ورود</h3>
+  <div class="flow">
+    <div class="step"><b>ماه ۱–۳ · اعتبارسنجی</b>۲۰ مصاحبه با آژانس‌ها؛ پایلوت رایگان ۱۰ آژانس؛ تأیید قیمت؛ زیرساخت پرداخت تومانی و میزبانی داخل ایران</div>
+    <div class="arr">←</div>
+    <div class="step"><b>ماه ۴–۶ · عرضه PLG</b>ابزار رایگان رویت‌پذیری AI؛ انتشار عمومی با پلن حرفه‌ای؛ هدف: ۱۰۰ حساب پرداختی</div>
+    <div class="arr">←</div>
+    <div class="step"><b>ماه ۷–۹ · کانال آژانسی</b>پلن آژانسی + وایت‌لیبل؛ برنامه شرکا؛ هدف: ۲۵۰ حساب و ۳۰ آژانس</div>
+    <div class="arr">←</div>
+    <div class="step"><b>ماه ۱۰–۱۲ · تثبیت دسته</b>گزارش سالانه «رویت‌پذیری برندها در AI ایران» (PR)؛ نخستین قراردادهای سازمانی؛ هدف: ۴۰۰+ حساب</div>
+  </div>
+
+  <div class="callout navy">
+    <b>پیشنهاد ارزش اولیه (شعار ورود به بازار):</b> «اولین پلتفرم ایرانی سنجش و بهبود حضور برند شما در پاسخ‌های هوش مصنوعی — برای آژانس‌هایی که می‌خواهند سرویس GEO را بدون استخدام متخصص، به سبد رتینر خود اضافه کنند.»
+  </div>
+</section>
+
+<!-- ============ 11. RISKS ============ -->
+<section class="page" id="risks">
+  <h2>۱۱. ریسک‌ها و محدودیت‌های عملیاتی مختص ایران</h2>
+  <table>
+    <thead><tr><th>ریسک</th><th>شواهد</th><th>شدت</th><th>راهبرد کاهش</th></tr></thead>
+    <tbody>
+      <tr><td><strong>نوسان ارز و فشار حاشیه سود</strong> (هزینه API دلاری / درآمد تومانی)</td><td>نوسان دلار آزاد در یک بازه یک‌ماهه: <span class="num">۲۳۵٬۹۴۰ → ۲۶۷٬۷۱۰</span> تومان <span class="ref">[[160]][[154]]</span></td><td>بالا</td><td>سهمیه‌بندی سخت LLM، کش پرسش‌ها، تعدیل قیمت دوره‌ای، ارزیابی مدل‌های واسطه/داخلی (مانند الگوی GapGPT <span class="ref">[[135]]</span>)</td></tr>
+      <tr><td><strong>قطعی اینترنت و بحران‌های سیاسی</strong></td><td>افت ۸۵٫۶٪ی هزینه تبلیغات دیجیتال در قطعی دی‌ماه؛ بازیابی ۳۷ روزه <span class="ref">[[16]]</span></td><td>بالا</td><td>ذخیره نقد ۱۲ ماهه؛ مدل قیمت سالانه پیش‌پرداخت؛ پایش روزانه به‌گونه‌ای طراحی شود که داده‌های از دست رفته قابل بازیابی باشند</td></tr>
+      <tr><td><strong>محدودیت دسترسی کاربران ایرانی به ChatGPT/سرویس‌های AI خارجی</strong></td><td>اتکای ۹۲٪ی کاربران AI ایران به ChatGPT <span class="ref">[[16]]</span> و دسترسی از طریق VPN</td><td>متوسط–بالا</td><td>پایش چندموتوره (Gemini، مدل‌های داخلی/دسترس‌پذیر)، تمرکز بر AI Overviews گوگل که از داخل ایران هم قابل سنجش است</td></tr>
+      <tr><td><strong>دقت داده رتبه‌يابی با VPN</strong></td><td>گزارش تکراسا: استفاده گسترده از VPN، دقت ابزارهای سئو را کاهش داده (موقعیت جغرافیایی واقعی قابل رهگیری نیست) <span class="ref">[[123]]</span></td><td>متوسط</td><td>زیرساخت سنجش داخل ایران، چند نقطه اندازه‌گیری، شفاف‌سازی محدودیت در گزارش‌ها</td></tr>
+      <tr><td><strong>ورود سریع رقبای داخلی به دسته AI</strong></td><td>میزفا همین حالا افزودنی‌های AI کیف‌پولی دارد <span class="ref">[[78]]</span>؛ ۳۰ ارائه‌دهنده فعال <span class="ref">[[123]]</span></td><td>متوسط</td><td>مزیت زودهنگام ۱۲–۱۸ ماهه + خندق داده تاریخی پرامپت‌های فارسی + قفل‌سازی آژانسی (وایت‌لیبل/چندفضایی)</td></tr>
+      <tr><td><strong>تمایل به پرداخت اعتبارسنجی‌نشده برای دسته جدید</strong></td><td>۸۶٪ کاربران ایرانی AI رایگان‌کارند <span class="ref">[[16]]</span>؛ هیچ ابزار داخلی مشابهی برای مقایسه قیمت وجود ندارد</td><td>متوسط</td><td>فروش به کسب‌وکار نه مصرف‌کننده؛ پایلوت ۱۰ آژانسی پیش از قیمت‌گذاری عمومی (بخش ۱۰)</td></tr>
+      <tr><td><strong>الزامات حقوقی/زیرساختی</strong></td><td>پرداخت تومانی نیازمند PSP داخلی؛ میزبانی خارجی برای کاربران داخل ایران پرنوسان است؛ حساسیت تحریمی برای سرمایه‌گذار خارجی</td><td>متوسط</td><td>موجودیت حقوقی ایرانی، درگاه پرداخت داخلی، میزبانی/CDN داخل کشور؛ ساختار سرمایه‌گذاری با مشاور حقوقی</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ============ 12. ANSWERS ============ -->
+<section class="page" id="answers">
+  <h2>۱۲. پاسخ نهایی به هفت پرسش کلیدی</h2>
+  <table>
+    <thead><tr><th style="width:5%">#</th><th style="width:33%">پرسش</th><th>پاسخ مبتنی بر شواهد</th></tr></thead>
+    <tbody>
+      <tr><td>۱</td><td><strong>جذاب‌ترین بخش مشتری اولیه؟</strong></td><td>آژانس‌های سئو/دیجیتال مارکتینگ و فریلنسرهای حرفه‌ای — ۷۰٪ خریداران فعلی ابزار سئو <span class="ref">[[123]]</span>، دارای بودجه جاری، کوتاه‌ترین چرخه فروش و اثر شبکه‌ای روی مشتریان‌شان.</td></tr>
+      <tr><td>۲</td><td><strong>تعداد مشتریان واجد پرداخت؟</strong></td><td>استخر پرمیوم هدف: <span class="num">۴٬۰۰۰–۵٬۰۰۰</span> حساب؛ کل استخر پرداخت‌کننده ابزار + خدمات مرتبط: <span class="num">۸٬۰۰۰–۱۱٬۰۰۰</span> (استنتاج از ۶–۸ هزار مشترک ابزار + بخش‌های ۲ تا ۴) <span class="badge b-modeled">مدل</span></td></tr>
+      <tr><td>۳</td><td><strong>TAM / SAM / SOM قابل دفاع؟</strong></td><td>TAM نرم‌افزاری ۱۴۰۵: <span class="num">۱۱۵–۱۳۵</span> میلیارد تومان (پایه ۱۲۵)؛ SAM: <span class="num">۴۵–۶۰</span> میلیارد (پایه ۵۰)؛ SOM سه‌ساله پایه <span class="num">۹</span> میلیارد و پنج‌ساله پایه <span class="num">۳۰</span> میلیارد تومان ARR (دامنه‌ها در بخش ۶).</td></tr>
+      <tr><td>۴</td><td><strong>قیمت‌های تجاری واقع‌بینانه؟</strong></td><td>رایگان (جذب) / حرفه‌ای <span class="num">۱٫۹</span> میلیون / آژانسی <span class="num">۴٫۹</span> میلیون / سازمانی از <span class="num">۱۲</span> میلیون تومان در ماه — لنگرشده به قیمت‌های منتشرشده میزفا <span class="ref">[[78]]</span> و تعرفه خدمات ۸–۶۵ میلیون <span class="ref">[[30]][[36]]</span>. <span class="badge b-prop">اعتبارسنجی‌نشده — نیازمند پایلوت</span></td></tr>
+      <tr><td>۵</td><td><strong>پیشنهاد ارزش اولیه؟</strong></td><td>«سنجش و بهبود حضور برند در پاسخ‌های هوش مصنوعی، به زبان فارسی» + برای آژانس‌ها: «سرویس GEO را به رتینر خود اضافه کنید، بدون استخدام متخصص» (شکاف مستند: نبود پلتفرم داخلی <span class="ref">[[92]][[95]]</span>).</td></tr>
+      <tr><td>۶</td><td><strong>عملی‌ترین کانال‌های جذب؟</strong></td><td>۱) ابزار رایگان PLG، ۲) سئوی محتوایی فارسی، ۳) فروش/شراکت آژانسی با وایت‌لیبل، ۴) رپورتاژ در شبکه ۷٬۴۰۰ ناشر <span class="ref">[[16]]</span>.</td></tr>
+      <tr><td>۷</td><td><strong>فرض‌هایی که برآورد را materially تغییر می‌دهند؟</strong></td><td>(الف) جهش/سقوط نرخ ارز (تبدیل همه ارقام)، (ب) محدود شدن دسترسی VPN به ChatGPT در ایران (کاهش فوریت محصول)، (پ) ورود میزفا/جت‌سئو به پایش AI (فشرده‌سازی پنجره تمایز)، (د) دقت برآورد ۳۵–۴۵ میلیاردی تکراسا (تنها لنگر اندازه بازار)، (ه) تمایل واقعی پرداخت برای دسته جدید (بدون سابقه داخلی).</td></tr>
     </tbody>
   </table>
 
   <div class="callout">
-    <b>استراتژی رقابتی:</b> اوژن را به‌عنوان «قاتل Semrush» بازاریابی نکنید. آن را «مرکز فرمان رویت‌پذیری هوش مصنوعی» معرفی کنید که در کنار ابزارهای سنتی سئو قرار می‌گیرد. آژانس‌ها از Semrush برای بک‌لینک و از اوژن برای استنادات AI و پایش پرامپت استفاده خواهند کرد. این جایگاه‌یابی مکمل، اصطکاک فروش را کاهش داده و از نبرد مستقیم جابه‌جایی ابزار پرهیز می‌کند.
+    <b>جمع‌بندی سرمایه‌گذار:</b> بازار ایران برای اوژن یک «اقیانوس آبی کوچک اما واقعی» است: دسته‌بندی بدون رقیب داخلی، استخر خریدار اثبات‌شده (آژانس‌ها)، و تقاضای رو به رشد (رشد ۴۰–۵۰٪ی بازار ابزار <span class="ref">[[123]]</span> و سه‌برابر شدن بازار تبلیغات دیجیتال در دو سال <span class="ref">[[10]][[16]]</span>). اما اندازه مطلق آن کوچک و پرنوسان است؛ بنابراین ایران باید <b>سنگر درآمدی-استراتژیک</b> (رهبری دسته فارسی‌زبان، ساخت داده و برند، رسیدن به سربه‌سر) تلقی شود و مقیاس‌سازی درآمد دلاری از مسیر گسترش به فارسی‌زبانان خارج از کشور و منطقه منا دنبال گردد.
   </div>
 </section>
 
-<section class="page" id="pricing">
-  <h2>۹. معماری قیمت‌گذاری و توجیه اقتصادی</h2>
-  <p>قیمت‌گذاری باید با اقتصاد واحد مشتری ایده‌آل آژانسی هم‌راستا باشد. آژانس‌ها ارزش نرم‌افزار را به مشتری خود بازفروش می‌کنند؛ بنابراین قیمت اوژن باید از حاشیه ۳ تا ۵ برابری هنگام بسته‌بندی در قراردادهای رتینر آژانسی پشتیبانی کند.</p>
-
-  <table>
-    <thead>
-      <tr>
-        <th>رده پلن</th>
-        <th>خریدار هدف</th>
-        <th>نقطه قیمتی</th>
-        <th>امتیازات و محدودیت‌های اصلی</th>
-      </tr>
-    </thead>
+<!-- ============ 13. SOURCES ============ -->
+<section class="page" id="sources">
+  <h2>۱۳. رجیستر شواهد</h2>
+  <p class="muted">تمام ادعاهای مادی این سند به منابع زیر متکی است (دسترسی: مهر ۱۴۰۵ / اکتبر ۲۰۲۶). سطح اطمینان: <span class="badge b-high">بالا</span> منبع رسمی/داده‌محور · <span class="badge b-mid">متوسط</span> رسانه/تحلیل صنعتی · <span class="badge b-low">پایین</span> خودگزارش فروشنده/دایرکتوری.</p>
+  <table style="font-size: 0.76rem;">
+    <thead><tr><th style="width:6%">شماره</th><th style="width:30%">منبع</th><th style="width:14%">تاریخ انتشار</th><th>ادعاهای پشتیبانی‌شده</th><th style="width:9%">اطمینان</th></tr></thead>
     <tbody>
-      <tr>
-        <td><strong>استارتر</strong></td>
-        <td>فریلنسرها / SMB داخلی</td>
-        <td>۷۹ دلار در ماه</td>
-        <td>۱ فضای کاری، ۳ دامنه، رویت‌پذیری AI پایه، پایش هفتگی پرامپت، ممیزی‌های استاندارد سئو.</td>
-      </tr>
-      <tr>
-        <td><strong>آژانسی</strong> <span class="badge b-tier1">هسته</span></td>
-        <td>آژانس‌های بوتیک (ICP رده ۱)</td>
-        <td>۲۹۹ دلار در ماه</td>
-        <td>۵ فضای کاری، ۲۵ دامنه، پایش روزانه پرامپت AI، گراف کامل استنادات، گزارش‌های دوزبانه RTL/LTR، دسترسی API.</td>
-      </tr>
-      <tr>
-        <td><strong>مقیاس</strong></td>
-        <td>SaaS بازار میانی / آژانس‌های بزرگ</td>
-        <td>۶۹۹ دلار در ماه</td>
-        <td>فضای کاری نامحدود، پورتال مشتری وایت‌لیبل، مرورگر گراف دانش، گره‌های خزش اختصاصی، مسیریابی اولویت‌دار LLM.</td>
-      </tr>
-    </tbody>
-  </table>
-
-  <h3>مفاهیم تجاری و اقتصاد واحد</h3>
-  <div class="grid g-2">
-    <div class="card">
-      <h4>پروفایل حاشیه ناخالص</h4>
-      <p>هزینه استنتاج AI/LLM (مانند Google AI SDK و Firecrawl) اصلی‌ترین بهای تمام‌شده خدمات (COGS) است. با حسابداری دقیق توکن و کش پرامپت (پیاده‌سازی‌شده در لایه کنترل هزینه اوژن)، حاشیه ناخالص هدف در رده آژانسی <strong>۷۵ تا ۸۲٪</strong> است. رده‌های پایین‌تر به دلیل هزینه LLM دچار فشردگی حاشیه می‌شوند؛ بنابراین ارتقای فروش تهاجمی به رده آژانسی الزامی است.</p>
-    </div>
-    <div class="card">
-      <h4>هزینه جذب مشتری (CAC)</h4>
-      <p>CAC هدف برای آژانس‌های منا/دیاسپورا: <strong>۸۰۰ تا ۱۲۰۰ دلار</strong>. از طریق رشد محصول‌محور (ابزار رایگان ممیزی دوزبانه AI) و ارتباط هدفمند لینکدین با بنیان‌گذاران آژانس. هدف دوره بازگشت سرمایه: کمتر از ۶ ماه با پلن ۲۹۹ دلار در ماه.</p>
-    </div>
-  </div>
-</section>
-
-<section class="page" id="gtm">
-  <h2>۱۰. نقشه راه سنگر اولیه و توسعه</h2>
-  <p>استراتژی ورود به بازار یک توالی دقیق را دنبال می‌کند: ایجاد تسلط در گوشه دوزبانه، ساخت جریان نقدی و مطالعات موردی، سپس توسعه افقی به سمت حساب‌های سازمانی بزرگ‌تر.</p>
-
-  <h3>فاز ۱: شکاف دوزبانه (ماه ۱ تا ۹)</h3>
-  <ul style="padding-right: 1.5rem; margin-bottom: 1.5rem;">
-    <li style="margin-bottom: 0.5rem;"><strong>اقدام:</strong> راه‌اندازی ابزار عمومی و رایگان «بررسی رویت‌پذیری AI فارسی/انگلیسی».</li>
-    <li style="margin-bottom: 0.5rem;"><strong>هدف:</strong> آژانس‌های دیجیتال منا و برندهای تجارت الکترونیک دیاسپورای فارسی‌زبان.</li>
-    <li style="margin-bottom: 0.5rem;"><strong>تبدیل:</strong> ابزار رایگان ۳ شکاف بحرانی در استنادات AI را شناسایی می‌کند. بازکردن گراف کامل استنادات و پایش تاریخی نیازمند پلن آژانسی ۲۹۹ دلار در ماه است.</li>
-    <li><strong>نقطه عطف:</strong> ۱۰۰ فضای کاری آژانسی پرداخت‌کننده (MRR ۳۰ هزار دلار).</li>
-  </ul>
-
-  <h3>فاز ۲: اکوسیستم آژانسی (ماه ۱۰ تا ۱۸)</h3>
-  <ul style="padding-right: 1.5rem; margin-bottom: 1.5rem;">
-    <li style="margin-bottom: 0.5rem;"><strong>اقدام:</strong> ارائه گزارش‌دهی وایت‌لیبل مشتری و مجوزهای تیمی چندکاربره.</li>
-    <li style="margin-bottom: 0.5rem;"><strong>هدف:</strong> آژانس‌های موجود در حال گسترش سبد مشتریان.</li>
-    <li style="margin-bottom: 0.5rem;"><strong>توسعه:</strong> معرفی افزودنی «صندلی مشتری» (۴۹ دلار در ماه به ازای هر مشتری) برای کسب درآمد توسعه مبتنی بر مصرف، بدون ریزش فضای کاری هسته.</li>
-    <li><strong>نقطه عطف:</strong> ۵۰۰ فضای کاری پرداخت‌کننده (MRR ۱۵۰ هزار دلار).</li>
-  </ul>
-
-  <h3>فاز ۳: اسب تروآی سازمانی (ماه ۱۹ تا ۳۶)</h3>
-  <ul style="padding-right: 1.5rem; margin-bottom: 1.5rem;">
-    <li style="margin-bottom: 0.5rem;"><strong>اقدام:</strong> اهرم‌سازی از بنیان‌گذاران دیاسپورا که از اوژن برای املاک فارسی خود استفاده می‌کنند تا پلتفرم را برای ردیابی AI انگلیسی‌زبان به دفتر مرکزی جهانی خود معرفی کنند.</li>
-    <li style="margin-bottom: 0.5rem;"><strong>هدف:</strong> برندهای سازمانی جهانی (رده ۲).</li>
-    <li><strong>نقطه عطف:</strong> ۲۰ قرارداد سازمانی با ACV بیش از ۱۵۰۰ دلار در ماه.</li>
-  </ul>
-
-  <div class="callout risk">
-    <b>بخش‌هایی که عمداً به تعویق می‌افتند:</b> در ۲۴ ماه نخست به دنبال SMEهای داخلی ایران یا کسب‌وکارهای محلی غربی نروید. هزینه جذب مشتری بسیار بالا، تمایل به پرداخت نزدیک به صفر برای رویت‌پذیری AI و هزینه‌های پشتیبانی، منابع مهندسی را خواهد بلعید.
-  </div>
-</section>
-
-<section class="page" id="risks">
-  <h2>۱۱. فرض‌های کلیدی، ریسک‌ها و اولویت‌های اعتبارسنجی</h2>
-  <p>این استراتژی ورود به بازار بر رفتارهای خاص بازار و واقعیت‌های عملیاتی تکیه دارد. ریسک‌های زیر می‌توانند فرضیه را باطل کنند و نیازمند تغییر مسیر فوری هستند.</p>
-
-  <table>
-    <thead>
-      <tr>
-        <th>دسته ریسک</th>
-        <th>ریسک مشخص</th>
-        <th>کاهش ریسک / اولویت اعتبارسنجی</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><strong>ژئوپلیتیک / تحریم</strong></td>
-        <td>ناتوانی قانونی یا عملیاتی در پردازش پرداخت از موجودیت‌های منا/مرتبط با ایران به دلیل تغییر قوانین انطباق.</td>
-        <td><strong>اولویت ۱:</strong> تأسیس فوری شخصیت حقوقی و حساب Stripe Atlas در امارات یا انگلستان. اعتبارسنجی ریل‌های پرداخت با ۵ آژانس بتا، پیش از مقیاس‌سازی هزینه بازاریابی.</td>
-      </tr>
-      <tr>
-        <td><strong>فشردگی حاشیه LLM</strong></td>
-        <td>افزایش قیمت API توسط Google/OpenAI و نابودی فرض حاشیه ناخالص ۷۵٪ در رده ۲۹۹ دلار.</td>
-        <td><strong>اولویت ۲:</strong> پیاده‌سازی اندازه‌گیری دقیق مصرف و سقف سخت کوئری‌های LLM در هر فضای کاری. ساخت لایه‌های کش اختصاصی برای کاهش فراخوانی‌های تکراری API.</td>
-      </tr>
-      <tr>
-        <td><strong>ریسک پلتفرم</strong></td>
-        <td>مسدودسازی خزش خودکار توسط ChatGPT/Perplexity و اختلال در قابلیت هسته ردیابی استنادات.</td>
-        <td><strong>اولویت ۳:</strong> متنوع‌سازی منابع داده (APIهای رسمی در صورت وجود، خزش SERP، ارائه‌دهندگان داده شخص ثالث). عدم اتکا به یک ارائه‌دهنده LLM.</td>
-      </tr>
-      <tr>
-        <td><strong>آموزش بازار</strong></td>
-        <td>آژانس‌ها هنوز «GEO» یا «رویت‌پذیری AI» را درک نمی‌کنند و از تخصیص بودجه برای آن خودداری می‌کنند.</td>
-        <td><strong>اولویت ۴:</strong> تغییر پیام از «GEO» به «محافظت از برند در جست‌وجوی هوش مصنوعی». قاب‌بندی مسئله به‌عنوان کاهش ریسک (از دست دادن سهم بازار به نفع AI)، نه یک کانال بازاریابی جدید.</td>
-      </tr>
-    </tbody>
-  </table>
-</section>
-
-<section class="page" id="evidence">
-  <h2>۱۲. رجیستر شواهد</h2>
-  <p>تمام ادعاهای مادی بازار و رقابت در این یادداشت با منابع راستی‌آزمایی‌شده زیر پشتیبانی می‌شود. داده‌ها در اکتبر ۲۰۲۶ دسترسی و بررسی شده‌اند.</p>
-
-  <table style="font-size: 0.8rem;">
-    <thead>
-      <tr>
-        <th style="width: 8%;">مرجع</th>
-        <th style="width: 32%;">منبع و انتشار</th>
-        <th style="width: 60%;">ادعای پشتیبانی‌شده</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td><span class="ref">[[1]]</span></td><td><span class="ltr-num">Dimension Market Research (2026)</span></td><td>پیش‌بینی رشد بازار GEO به ۱۰۸۹٫۳ میلیون دلار در سال ۲۰۲۶.</td></tr>
-      <tr><td><span class="ref">[[7]]</span></td><td><span class="ltr-num">Coherent Market Insights (Aug 2026)</span></td><td>انتظار رشد بازار جهانی خدمات GEO از ۱٫۲۵ میلیارد دلار در سال ۲۰۲۶.</td></tr>
-      <tr><td><span class="ref">[[11]]</span></td><td><span class="ltr-num">Discovered Labs (Dec 2025)</span></td><td>راستی‌آزمایی قیمت Profound: ۴۹۹ دلار در ماه برای عمق سازمانی رویت‌پذیری AI.</td></tr>
-      <tr><td><span class="ref">[[14]]</span></td><td><span class="ltr-num">Surmado (May 2026)</span></td><td>قیمت Otterly.AI از ۲۹ دلار در ماه؛ کمترین نقطه ورود معتبر بازار.</td></tr>
-      <tr><td><span class="ref">[[22]]</span></td><td><span class="ltr-num">Fortune Business Insights (2026)</span></td><td>ارزش بازار جهانی نرم‌افزار سئو: ۸۵٫۹۷ میلیارد دلار در سال ۲۰۲۵.</td></tr>
-      <tr><td><span class="ref">[[30]]</span></td><td><span class="ltr-num">Mordor Intelligence (Mar 2026)</span></td><td>ارزش بازار آژانس‌های بازاریابی و تبلیغات خاورمیانه: ۸٫۱۸ میلیارد دلار در سال ۲۰۲۵.</td></tr>
-      <tr><td><span class="ref">[[32]]</span></td><td><span class="ltr-num">NT Technology (Blog)</span></td><td>ویژگی‌های بازار تبلیغات ایران و رشد کندتر آن نسبت به منطقه منا.</td></tr>
-      <tr><td><span class="ref">[[35]]</span></td><td><span class="ltr-num">Statista Market Forecast</span></td><td>جهش هزینه تبلیغات دیجیتال در منا با حرکت به سمت محتوای شخصی‌سازی‌شده.</td></tr>
-      <tr><td>مخزن</td><td><span class="ltr-num">Oxenn GitHub (main @ d0f955d)</span></td><td>راستی‌آزمایی وضعیت پیاده‌سازی معماری چندمستأجری، موتور RTL/LTR و سرویس‌های ردیابی AI.</td></tr>
+      <tr><td><span class="ref">[[123]]</span></td><td>تکراسا اینسایت — فصل ابزار سئو، گزارش تکنولوژی‌های بازاریابی ایران ۱۴۰۳</td><td>بهمن ۱۴۰۳ (فوریه ۲۰۲۵)</td><td>صنعت سئو ۷۰۰–۹۰۰ میلیارد تومان؛ بازار ابزار ۱۴۰۲: ۳۵–۴۵ میلیارد با رشد ۴۰–۵۰٪؛ ۳۰ ارائه‌دهنده و ۱۱ ابزار خارجی؛ فریلنسرها ۷۰٪ کاربران/۵۰٪ درآمد؛ معیارهای انتخاب؛ مسئله VPN؛ رقابت قیمتی اکانت‌های اشتراکی</td><td><span class="badge b-mid">متوسط–بالا</span></td></tr>
+      <tr><td><span class="ref">[[16]][[12]][[11]]</span></td><td>گزارش سالانه یکتانت ۱۴۰۴ (بازنشر راه‌پرداخت/دیجیاتو)</td><td>مهر ۱۴۰۵ (اکتبر ۲۰۲۶)</td><td>بازار تبلیغات دیجیتال ۳۲٫۲ همت؛ سهم کانال‌ها (اجتماعی ۳۱٪، گوگل ۱۱٫۸٪…)؛ رپورتاژ: ۲۵۱ هزار آگهی/۴۷۴ میلیارد تومان/۷٬۴۰۰+ ناشر؛ فروشگاه‌های اینستاگرامی ۵۶۴ هزار (−۴۰٪)؛ ۵۷٪ استفاده از AI و سهم ۹۲٪ی ChatGPT و ۸۶٪ رایگان‌کاری؛ الگوی بحران‌ها (−۸۵٫۶٪ قطعی دی، بازیابی ۳۷ روزه)</td><td><span class="badge b-high">بالا</span></td></tr>
+      <tr><td><span class="ref">[[10]]</span></td><td>گزارش بازاریابی دیجیتال یکتانت ۱۴۰۲</td><td>۱۴۰۳</td><td>بازار تبلیغات دیجیتال ۱۴۰۲ ≈ ۱۱ همت و بیش از ۲۰٪ کل تبلیغات</td><td><span class="badge b-high">بالا</span></td></tr>
+      <tr><td><span class="ref">[[59]][[66]]</span></td><td>مرور گزارش تجارت الکترونیکی ۱۴۰۳ (way2pay) + خبر رسمی ۱۴۰۲</td><td>۱۴۰۴–۱۴۰۳</td><td>۳۰۶٬۰۸۰ اینماد فعال در پایان ۱۴۰۳ (+۴۸٪)؛ ۲۰۷ هزار در ۱۴۰۲</td><td><span class="badge b-high">بالا</span></td></tr>
+      <tr><td><span class="ref">[[101]][[96]][[98]]</span></td><td>گزارش تجارت الکترونیک ایران ۱۴۰۳ (انجمن تجارت الکترونیک؛ بازنشر زومیت/ایرنا/way2pay)</td><td>مهر ۱۴۰۴–۱۴۰۵</td><td>ارزش معاملات ۵٬۵۰۰ همت؛ سهم خرده‌فروشی آنلاین ۴٫۸٪/۵٫۶٪؛ بازار فروشگاه‌های اینستاگرامی ۸۸٫۸ همت</td><td><span class="badge b-high">بالا</span></td></tr>
+      <tr><td><span class="ref">[[78]]</span></td><td>صفحه قیمت‌گذاری میزفا تولز (mizfa.tools/pricing)</td><td>دسترسی زنده مهر ۱۴۰۵</td><td>پلن استاندارد ۶۵۰ هزار تومان (۲۵ دامنه)؛ حرفه‌ای ۱٫۹۵ میلیون (۸۰ دامنه)؛ تخفیف سالانه ۲ ماه رایگان؛ افزودنی AI کیف‌پولی (حداقل شارژ ۵۰۰ هزار تومان)؛ ادعای ۴۱٬۵۶۰ کاربر (خودگزارش)</td><td><span class="badge b-high">بالا</span> (قیمت) / <span class="badge b-low">پایین</span> (تعداد کاربر)</td></tr>
+      <tr><td><span class="ref">[[47]][[115]][[79]]</span></td><td>مقایسه ابزارهای سئو ایرانی ۱۴۰۵ (ویرگول) + پیام‌آوا</td><td>مهر ۱۴۰۵ / خرداد ۱۴۰۵</td><td>قیمت شروع ابزارهای داخلی ۳۷۰–۶۵۰ هزار تومان؛ میزفا از ~۵۷۸ هزار تومان</td><td><span class="badge b-mid">متوسط</span></td></tr>
+      <tr><td><span class="ref">[[30]][[29]][[118]][[36]][[116]][[32]]</span></td><td>تعرفه‌های خدمات سئو: وب‌داران، نردبان، سئودو، تابان‌شهر، آویناپرداز</td><td>۱۴۰۳–۱۴۰۵</td><td>سئو ماهانه SMB: ۱۵–۶۵ میلیون؛ شروع آژانس‌های معتبر: ۳۵ میلیون؛ بسته اقتصادی: ۸–۱۸ میلیون؛ ساعتی ۹۰–۱۵۰ هزار تومان</td><td><span class="badge b-mid">متوسط</span> (صفحات قیمت فروشنده)</td></tr>
+      <tr><td><span class="ref">[[92]]</span></td><td>novinmarketing.com/aeo</td><td>دسترسی زنده</td><td>فروش «خدمات سئو هوش مصنوعی، AEO و GEO» به‌صورت خدمت آژانسی</td><td><span class="badge b-high">بالا</span></td></tr>
+      <tr><td><span class="ref">[[95]]</span></td><td>digimark-ai.com</td><td>دسترسی زنده</td><td>ادعای «اولین ابزار سئو با هوش مصنوعی در ایران» (تمرکز: بهینه‌سازی/تولید محتوا)</td><td><span class="badge b-mid">متوسط</span></td></tr>
+      <tr><td><span class="ref">[[112]]</span></td><td>ایسنا — آمار شرکت‌های دانش‌بنیان</td><td>بهمن ۱۴۰۴</td><td>۱۲٬۶۹۲ شرکت دانش‌بنیان؛ ۴۲۱ هزار شغل</td><td><span class="badge b-high">بالا</span></td></tr>
+      <tr><td><span class="ref">[[23]][[20]]</span></td><td>DataReportal 2025 (بازنشر زومیت) / safine</td><td>فروردین ۱۴۰۴ / شهریور ۱۴۰۳</td><td>۷۳٫۲ میلیون کاربر اینترنت؛ نفوذ ۸۱٫۷٪</td><td><span class="badge b-high">بالا</span></td></tr>
+      <tr><td><span class="ref">[[136]][[139]]</span></td><td>ایرنا / ایران‌نیوزپیپر — پیمایش رفتار AI ایرانیان</td><td>مرداد ۱۴۰۵ / مهر ۱۴۰۴</td><td>ChatGPT بیش از ۹۰٪ کاربران AI ایران؛ ~۲۱ میلیون ایرانی کاربر چت‌بات</td><td><span class="badge b-high">بالا</span> / <span class="badge b-mid">متوسط</span></td></tr>
+      <tr><td><span class="ref">[[154]][[155]][[160]]</span></td><td>TGJU / دنیای اقتصاد / اقتصادنیوز — نرخ دلار بازار آزاد</td><td>مهر ۱۴۰۵</td><td>دامنه نوسان ~۲۳۵٬۹۴۰ تا ~۲۶۷٬۷۱۰ تومان؛ نرخ فرضی گزارش: ۲۵۰٬۰۰۰ تومان/دلار</td><td><span class="badge b-high">بالا</span></td></tr>
+      <tr><td><span class="ref">[[56]]</span></td><td>Discolike — دایرکتوری شرکت‌ها</td><td>سپتامبر ۲۰۲۶</td><td>۸٬۶۰۰ شرکت SEO/PPC در ایران (فقط به‌عنوان سقف بالایی استفاده شد)</td><td><span class="badge b-low">پایین</span></td></tr>
+      <tr><td><span class="ref">[[145]]</span></td><td>ابتکارنیوز به نقل از سامانه جامع رسانه‌های کشور</td><td>—</td><td>۲۸ خبرگزاری رسمی دارای مجوز</td><td><span class="badge b-mid">متوسط</span></td></tr>
+      <tr><td><span class="ref">[[87]][[135]][[73]]</span></td><td>محتوای آموزشی GEO (طاووسی) / دیجی‌کالا مگ (GapGPT) / زومیت (دامنه‌ها)</td><td>۱۴۰۴–۱۴۰۵</td><td>وجود تقاضای آموزشی GEO فارسی؛ پلتفرم‌های واسط دسترسی AI؛ بیش از ۱٫۸ میلیون دامنه ir</td><td><span class="badge b-mid">متوسط</span></td></tr>
     </tbody>
   </table>
 
   <footer>
-    <p>یادداشت سرمایه‌گذار اوژن · بازار هدف و استراتژی ورود به بازار · محرمانه · اکتبر ۲۰۲۶</p>
-    <p style="margin-top: 0.5rem; font-size: 0.72rem;">این سند شامل اظهارات آینده‌نگر و برآوردهای مدل‌سازی‌شده است. نتایج واقعی نفوذ در بازار و درآمد ممکن است بسته به کیفیت اجرا، پویایی‌های رقابتی و عوامل اقتصاد کلان به‌طور معناداری متفاوت باشد.</p>
+    <p><strong>یادداشت سرمایه‌گذار اوژن — بازار هدف ایران</strong> · جایگزین کامل بخش «بازار هدف» · محرمانه · مهر ۱۴۰۵</p>
+    <p>این سند شامل برآوردهای مدل‌سازی‌شده و اظهارات آینده‌نگر است. ارقام تومانی به نرخ‌های جاری بازار ایران وابسته‌اند و معادل‌های دلاری صرفاً با نرخ فرضی ۲۵۰٬۰۰۰ تومان محاسبه شده‌اند. پیش از هر تصمیم سرمایه‌گذاری، اعتبارسنجی میدانی (۲۰ مصاحبه آژانسی + پایلوت ۳ ماهه) الزامی است.</p>
   </footer>
 </section>
 
 </main>
-
 </body>
 </html>
